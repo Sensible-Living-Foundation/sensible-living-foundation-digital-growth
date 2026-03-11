@@ -2,12 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Montserrat:wght@500;600;700;800&display=swap');
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #1A1A1A;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
 }
 
-body {
-  font-family: 'Inter', sans-serif;
+@layer components {
+  /* Primary yellow CTA — charity:water */
+  .btn-yellow {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 font-display font-bold text-sm uppercase tracking-widest rounded transition-all duration-200;
+    background: #FFCA0A;
+    color: #1A1A1A;
+  }
+  .btn-yellow:hover {
+    background: #FFD53B;
+    box-shadow: 0 4px 24px rgba(255,202,10,0.4);
+    transform: translateY(-1px);
+  }
+
+  /* Red CTA — Operation HOPE */
+  .btn-red {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 font-display font-bold text-sm uppercase tracking-widest rounded text-white transition-all duration-200;
+    background: #E1251B;
+  }
+  .btn-red:hover {
+    background: #c41e15;
+    transform: translateY(-1px);
+  }
+
+  /* Ghost outline button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 font-display font-bold text-sm uppercase tracking-widest rounded border-2 border-white text-white transition-all duration-200;
+  }
+  .btn-ghost:hover {
+    @apply bg-white;
+    color: #1A1A1A;
+  }
+
+  /* Green solid */
+  .btn-green {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 font-display font-bold text-sm uppercase tracking-widest rounded text-white transition-all duration-200;
+    background: #1B4332;
+  }
+  .btn-green:hover {
+    background: #2D6A4F;
+    transform: translateY(-1px);
+  }
+
+  /* Section label */
+  .section-label {
+    @apply text-xs font-display font-bold uppercase tracking-widest mb-3 block;
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-white rounded-2xl p-8 transition-all duration-300;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+  }
+  .card:hover {
+    box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+    transform: translateY(-2px);
+  }
+
+  /* Stats number */
+  .stat-number {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 800;
+  }
+
+  /* Input base */
+  .input {
+    @apply w-full px-5 py-3 border border-gray-200 rounded text-sm focus:outline-none transition-all duration-200;
+    font-family: 'Inter', sans-serif;
+  }
+  .input:focus {
+    border-color: #2D6A4F;
+    box-shadow: 0 0 0 3px rgba(45,106,79,0.1);
+  }
 }

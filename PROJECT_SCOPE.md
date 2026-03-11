@@ -27,9 +27,17 @@ Improve the foundation website’s user experience, supporter flows, SEO, and au
 - full CRM migration
 - paid ad management
 
-## Deliverables
+## Phase 2 Deliverables (Interactive Map)
+All code lives inside this repo under two folders:
+
+- backend/   → Go + Fiber + GraphQL API serving GeoJSON data
+- frontend/  → Next.js 14 + Mapbox interactive map
+
+Delivered as a single Pull Request to the client's original repo.
+
+## Phase 1 Deliverables
 - UX/UI audit
 - SEO audit
 - automation plan
 - contributor issue backlog
-- roadmap  
+- roadmap
