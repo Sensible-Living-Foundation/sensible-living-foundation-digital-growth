@@ -22,3 +22,9 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Client-facing setup guide (shared separately)
+CLIENT_SETUP.md
+
+# Internal client feedback tracker (not for repo)
+CLIENT_FEEDBACK_TRACKER.md

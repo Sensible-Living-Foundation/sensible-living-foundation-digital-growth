@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DonationForm from "./DonationForm";
 
 export const metadata = {
   title: "Get Involved | Sensible Living Foundation",
@@ -55,17 +56,17 @@ export default function GetInvolved() {
               Your gift changes lives.
             </h2>
             <p className="text-gray-500 leading-relaxed mb-8 text-lg">
-              Every dollar goes directly to funding Financial Sense workshops and Sense Gardens.
-              We are a 501(c)(3) — your gift is fully tax-deductible.
+              Every dollar goes directly to developing Financial Sense programming and launching
+              Sense Gardens pilot sites. We are a 501(c)(3) — your gift is fully tax-deductible.
             </p>
             {/* Impact breakdown — Feeding America "$1=10 meals" style */}
             <div className="space-y-4 mb-8">
               {[
-                { amt: "$25",   impact: "Seeds and supplies for one garden plot" },
-                { amt: "$50",   impact: "Financial Sense workshop materials for 15 families" },
-                { amt: "$100",  impact: "One full month of garden operations" },
-                { amt: "$500",  impact: "Sponsor a complete Financial Sense cohort" },
-                { amt: "$1,000", impact: "Plant and establish a brand new Sense Garden" },
+                { amt: "$25",   impact: "Help provide seedlings, pods, or starter supplies for our pilot garden systems" },
+                { amt: "$50",   impact: "Support garden education materials or workshop supplies for community participants" },
+                { amt: "$100",  impact: "Contribute toward a portion of a small-scale pilot garden build" },
+                { amt: "$250",  impact: "Help fund vertical garden components or nutrition education resources" },
+                { amt: "$500+", impact: "Support a pilot site, community programming, or educational access for families" },
               ].map((item) => (
                 <div key={item.amt} className="flex items-center gap-5 p-4 bg-white rounded-xl border border-gray-100 hover:border-slf-green-mid transition-colors">
                   <p className="stat-number text-2xl min-w-[60px]" style={{ color: "#1B4332" }}>{item.amt}</p>
@@ -84,36 +85,7 @@ export default function GetInvolved() {
           </div>
 
           {/* Donation form */}
-          <div className="card !p-10 sticky top-24">
-            <h3 className="font-serif text-2xl font-bold text-slf-charcoal mb-6">Give Now</h3>
-            <div className="grid grid-cols-2 gap-2 mb-5">
-              {["Give Once", "Give Monthly"].map((opt, i) => (
-                <button key={opt}
-                  className="py-3 rounded text-sm font-display font-bold uppercase tracking-wide transition-all"
-                  style={i === 1
-                    ? { background: "#FFCA0A", color: "#1A1A1A" }
-                    : { border: "2px solid #e5e7eb", color: "#6b7280" }}>
-                  {opt}
-                </button>
-              ))}
-            </div>
-            <div className="grid grid-cols-3 gap-2 mb-5">
-              {["$25", "$50", "$100", "$250", "$500", "Other"].map((amt) => (
-                <button key={amt}
-                  className="py-3 text-sm font-bold border-2 border-gray-100 rounded hover:border-yellow-400 transition-colors text-gray-700">
-                  {amt}
-                </button>
-              ))}
-            </div>
-            <input type="text" placeholder="Full Name" className="input mb-3" />
-            <input type="email" placeholder="Email Address" className="input mb-4" />
-            <button className="btn-yellow w-full justify-center !rounded">
-              Donate Now →
-            </button>
-            <p className="text-center text-xs text-gray-400 mt-3">
-              Secure · Tax-deductible · No fees via Givebutter
-            </p>
-          </div>
+          <DonationForm />
         </div>
       </section>
 
@@ -130,8 +102,7 @@ export default function GetInvolved() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {[
-              { icon: "🌱", title: "Garden Volunteer",       desc: "Help plant, tend, and harvest at a Sense Garden near you. Physical, outdoor, and deeply rewarding." },
-              { icon: "📚", title: "Financial Educator",     desc: "Facilitate Financial Sense workshops. Full training provided. No financial background required." },
+              { icon: "🌱", title: "Garden Volunteer",       desc: "Support our hydroponic and vertical garden systems — set up growing pods, help prepare and maintain systems, assist with harvest and distribution, and support hands-on educational demonstrations for community participants." },
               { icon: "📣", title: "Community Outreach",     desc: "Spread the word through local events, flyers, and grassroots outreach in your neighborhood." },
               { icon: "💻", title: "Skills-Based Volunteer", desc: "Contribute professional skills — design, marketing, tech, legal, or accounting — to support operations." },
             ].map((item) => (
@@ -143,6 +114,26 @@ export default function GetInvolved() {
                 </div>
               </div>
             ))}
+
+            {/* Financial Educator — future opportunity */}
+            <div className="flex gap-5 p-6 rounded-2xl border border-dashed border-slf-green-mid bg-green-50/40 hover:shadow-card transition-all">
+              <span className="text-3xl mt-1">📚</span>
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="font-display font-bold text-slf-charcoal">Financial Educator</h3>
+                  <span className="text-xs font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
+                    style={{ background: "#D8F3DC", color: "#1B4332" }}>
+                    Future Opportunity
+                  </span>
+                </div>
+                <p className="text-gray-500 text-sm leading-relaxed mb-3">
+                  Training financial educators is a core part of our long-term vision. As we build out the Financial Sense curriculum and educator pathway, we want to hear from people who are passionate about financial literacy and community education.
+                </p>
+                <p className="text-xs font-semibold" style={{ color: "#2D6A4F" }}>
+                  Join our interest list — we will reach out when the educator training program launches.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Form */}
@@ -160,10 +151,10 @@ export default function GetInvolved() {
                 <input type="tel" placeholder="Phone Number" className="input" />
                 <select className="input text-gray-400">
                   <option value="">Area of Interest</option>
-                  <option>Sense Gardens</option>
-                  <option>Financial Literacy Education</option>
+                  <option>Sense Gardens (Hydroponic & Vertical Systems)</option>
                   <option>Community Outreach</option>
                   <option>Skills-Based Support</option>
+                  <option>Future Financial Educator (Interest List)</option>
                 </select>
                 <select className="input text-gray-400">
                   <option value="">Availability</option>
@@ -181,52 +172,120 @@ export default function GetInvolved() {
         </div>
       </section>
 
-      {/* ─── PARTNER ─── Operation HOPE corporate program style */}
+      {/* ─── PARTNER ─── */}
       <section id="partner" className="py-24" style={{ background: "#06205C" }}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
+
+          {/* Header */}
+          <div className="text-center mb-16">
             <span className="section-label text-blue-300">Partner With Us</span>
             <h2 className="font-serif text-display-lg text-white">
-              Corporate & Organizational Partnerships
+              Build Something Meaningful Together
             </h2>
-            <p className="text-gray-300 mt-4 max-w-xl mx-auto">
-              Join a growing network of organizations committed to community health and financial empowerment.
+            <p className="text-gray-300 mt-4 max-w-2xl mx-auto text-lg">
+              We partner with schools, employers, community organizations, and individuals who share our commitment to financial empowerment, food access, and community health.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {/* Partner Categories */}
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
             {[
               {
-                icon: "🏢",
-                title: "Corporate Sponsorship",
-                desc: "Sponsor a program, garden, or event. Receive naming recognition, employee engagement opportunities, and quarterly impact reports.",
-              },
-              {
                 icon: "🏫",
-                title: "Bring Us to Your Community",
-                desc: "Partner with us to bring Financial Sense or Sense Gardens to your school, church, or community organization — at zero cost to participants.",
+                title: "Schools & School Districts",
+                desc: "Bring innovative, space-efficient vertical gardens to school campuses. We support nutrition and wellness education, STEM-based curriculum connected to garden learning, and hands-on experiences for students and teachers.",
+                examples: ["Vertical garden installations on campus", "Nutrition & wellness curriculum", "STEM-connected garden learning", "Teacher & student programming"],
               },
               {
-                icon: "👥",
-                title: "Employee Volunteer Days",
-                desc: "Organize meaningful team volunteer days at a Sense Garden. Customized experience with impact metrics and recognition for your team.",
+                icon: "🏘️",
+                title: "Community Centers & Youth-Serving Organizations",
+                desc: "Partner with us to bring garden education and financial literacy to the communities you already serve. We align with organizations that work where the need is greatest.",
+                examples: ["Boys & Girls Clubs", "After-school programs", "Family resource centers", "Neighborhood centers"],
+              },
+              {
+                icon: "🏢",
+                title: "Employers & Corporate Teams",
+                desc: "Create real community impact through your organization. From employee volunteer days to program sponsorships, we make it easy for companies to invest in the communities where their people live and work.",
+                examples: ["Employee volunteer days", "Garden or program sponsorship", "Wellness & financial wellness partnerships", "Collaborative community impact days"],
+              },
+              {
+                icon: "🤝",
+                title: "Individuals & Families",
+                desc: "You don't have to be a company to make a difference. There are meaningful ways for individuals to support the mission locally — on any budget.",
+                examples: ["Sponsor a garden bench or learning station", "Donate supplies or materials", "Host a community fundraiser", "Connect us to your network or neighborhood"],
               },
             ].map((item) => (
-              <div key={item.title}
-                className="rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-colors">
+              <div key={item.title} className="rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors bg-white/5">
                 <span className="text-4xl mb-5 block">{item.icon}</span>
-                <h3 className="font-display font-bold text-white text-lg mb-3">{item.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="font-display font-bold text-white text-xl mb-3">{item.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-5">{item.desc}</p>
+                <ul className="space-y-2">
+                  {item.examples.map((ex) => (
+                    <li key={ex} className="flex items-start gap-2 text-gray-400 text-sm">
+                      <span className="mt-1 w-1.5 h-1.5 rounded-full bg-yellow-400 shrink-0" />
+                      {ex}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
 
+          {/* Sponsorship Opportunities */}
+          <div className="mb-16">
+            <h3 className="font-serif text-2xl text-white text-center mb-10">Sponsorship & Support Opportunities</h3>
+            <div className="grid md:grid-cols-3 gap-5">
+              {[
+                {
+                  icon: "🏅",
+                  title: "Corporate Sponsorship",
+                  desc: "Sponsor a program, garden, or event. Receive naming recognition, quarterly impact reports, and employee engagement opportunities.",
+                },
+                {
+                  icon: "🪑",
+                  title: "Naming Opportunities",
+                  desc: "Put your name — or honor someone — on a garden bench, seating area, learning station, or program space.",
+                },
+                {
+                  icon: "🌱",
+                  title: "Pilot Program Sponsorship",
+                  desc: "Directly fund the launch of a pilot garden site at a school, community center, or neighborhood location.",
+                },
+                {
+                  icon: "📦",
+                  title: "In-Kind Support",
+                  desc: "Donate supplies, materials, tools, equipment, or professional services that support our programs and operations.",
+                },
+                {
+                  icon: "🎓",
+                  title: "Educational Partnerships",
+                  desc: "Co-develop curriculum, share resources, or collaborate on programming that connects food, finance, and community wellness.",
+                },
+                {
+                  icon: "💻",
+                  title: "Community Webinars",
+                  desc: "Host or co-sponsor community-based webinars on financial literacy, nutrition, or urban food systems — reaching families where they are.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl p-6 border border-white/10 hover:border-yellow-400/40 transition-colors">
+                  <span className="text-3xl mb-4 block">{item.icon}</span>
+                  <h4 className="font-display font-bold text-white mb-2">{item.title}</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
           <div className="text-center">
-            <a href="mailto:partnerships@sensiblelivingfoundation.org"
-              className="btn-yellow">
+            <p className="text-gray-300 mb-6 text-lg">
+              Ready to explore a partnership? We'd love to connect.
+            </p>
+            <a href="mailto:partnerships@sensiblelivingfoundation.org" className="btn-yellow">
               Contact Us About Partnerships →
             </a>
           </div>
+
         </div>
       </section>
 
