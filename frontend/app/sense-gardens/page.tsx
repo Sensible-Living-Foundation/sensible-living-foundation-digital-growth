@@ -300,31 +300,45 @@ export default function SenseGardens() {
                 title: "Vertical Garden Systems",
                 desc: "Growing systems that stack plants vertically, bringing fresh food to schools, community centers, and neighborhood sites with no traditional garden space.",
                 tag: "Space-Efficient",
+                image: "/images/gardens/vertical.jpeg",
               },
               {
                 icon: "💧",
                 title: "Hydroponic Growing",
                 desc: "A soil-free growing method that uses significantly less water than traditional soil gardening — making it practical and sustainable in Phoenix's desert climate.",
                 tag: "Water-Smart",
+                image: "/images/gardens/Hydrophonic.jpeg",
               },
               {
                 icon: "📦",
                 title: "Modular Pilot Systems",
                 desc: "Each pilot system is designed to start small and grow alongside our community partnerships — practical and accessible from day one.",
                 tag: "Scalable",
+                image: "/images/gardens/modular.jpeg",
               },
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
-                {/* Image placeholder */}
-                <div className="h-48 flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, #1B4332, #52B788)" }}>
-                  <div className="text-center text-white px-6">
-                    <span className="text-5xl mb-2 block">{item.icon}</span>
-                    <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-white/20">
-                      {item.tag}
-                    </span>
+                {item.image ? (
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 400px"
+                    />
                   </div>
-                </div>
+                ) : (
+                  <div className="h-48 flex items-center justify-center"
+                    style={{ background: "linear-gradient(135deg, #1B4332, #52B788)" }}>
+                    <div className="text-center text-white px-6">
+                      <span className="text-5xl mb-2 block">{item.icon}</span>
+                      <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-white/20">
+                        {item.tag}
+                      </span>
+                    </div>
+                  </div>
+                )}
                 <div className="p-8">
                   <h3 className="font-display font-bold text-gray-900 text-lg mb-3">{item.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
@@ -554,10 +568,10 @@ export default function SenseGardens() {
                   </li>
                 ))}
               </ul>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
+              <Link href="/recipes#salads" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-opacity hover:opacity-80"
                 style={{ background: "#D8F3DC", color: "#1B4332" }}>
-                <span>🍽️</span> Full recipes coming soon
-              </div>
+                <span>🍽️</span> View full recipes →
+              </Link>
             </div>
 
             {/* Plant-Based Meals */}
@@ -578,10 +592,10 @@ export default function SenseGardens() {
                   </li>
                 ))}
               </ul>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
+              <Link href="/recipes#plant-based" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-opacity hover:opacity-80"
                 style={{ background: "#D8F3DC", color: "#1B4332" }}>
-                <span>🍽️</span> Full recipes coming soon
-              </div>
+                <span>🍽️</span> View full recipes →
+              </Link>
             </div>
 
             {/* Nutritious Snacks */}
@@ -602,10 +616,10 @@ export default function SenseGardens() {
                   </li>
                 ))}
               </ul>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
+              <Link href="/recipes#snacks" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-opacity hover:opacity-80"
                 style={{ background: "#D8F3DC", color: "#1B4332" }}>
-                <span>🍽️</span> Full recipes coming soon
-              </div>
+                <span>🍽️</span> View full recipes →
+              </Link>
             </div>
 
             {/* Smoothies & Juices */}
@@ -626,10 +640,10 @@ export default function SenseGardens() {
                   </li>
                 ))}
               </ul>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
+              <Link href="/recipes#smoothies" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-opacity hover:opacity-80"
                 style={{ background: "#D8F3DC", color: "#1B4332" }}>
-                <span>🍽️</span> Full recipes coming soon
-              </div>
+                <span>🍽️</span> View full recipes →
+              </Link>
             </div>
 
           </div>

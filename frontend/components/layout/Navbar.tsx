@@ -46,6 +46,7 @@ const nav = [
   { href: "/about",           label: "About" },
   { href: "/financial-sense", label: "Financial Sense" },
   { href: "/sense-gardens",   label: "Sense Gardens" },
+  { href: "/blog",            label: "Blog" },
   { href: "/get-involved",    label: "Get Involved" },
 ];
 
