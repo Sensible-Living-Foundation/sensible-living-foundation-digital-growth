@@ -3,11 +3,6 @@
 import Script from "next/script";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Join Our Board | Sensible Living Foundation",
-  description: "Join the Sensible Living Foundation advisory board or board of directors. Help shape a nonprofit building financial literacy and food access programs in Phoenix.",
-};
-
 export default function Board() {
   return (
     <div>
