@@ -3,11 +3,6 @@
 import Script from "next/script";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Donate | Sensible Living Foundation",
-  description: "Support the Sensible Living Foundation. Every dollar funds free financial literacy and community garden programs in Phoenix.",
-};
-
 export default function Donate() {
   return (
     <div>
