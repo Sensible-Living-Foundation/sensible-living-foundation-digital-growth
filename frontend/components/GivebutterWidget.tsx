@@ -2,41 +2,29 @@
 
 import { useEffect, useRef } from "react";
 
-interface GivebutterWidgetProps {
+interface Props {
   id: string;
   className?: string;
 }
 
-export default function GivebutterWidget({ id, className }: GivebutterWidgetProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scriptLoaded = useRef(false);
+export default function GivebutterWidget({ id, className }: Props) {
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!ref.current) return;
+    ref.current.innerHTML = "";
 
-    // Create the custom element
     const widget = document.createElement("givebutter-widget");
     widget.setAttribute("id", id);
-    containerRef.current.appendChild(widget);
+    ref.current.appendChild(widget);
 
-    // Load the Givebutter script only once globally
-    if (!scriptLoaded.current && !document.querySelector('script[src="https://givebutter.com/js/widget.js"]')) {
-      scriptLoaded.current = true;
-      const script = document.createElement("script");
-      script.src = "https://givebutter.com/js/widget.js";
-      script.async = true;
-      document.body.appendChild(script);
-    } else if (typeof (window as any).Givebutter !== "undefined") {
-      // If script already loaded, re-init
-      try { (window as any).Givebutter("init"); } catch {}
+    if (!document.querySelector('script[src="https://givebutter.com/js/widget.js"]')) {
+      const s = document.createElement("script");
+      s.src = "https://givebutter.com/js/widget.js";
+      s.async = true;
+      document.body.appendChild(s);
     }
-
-    return () => {
-      if (containerRef.current) {
-        containerRef.current.innerHTML = "";
-      }
-    };
   }, [id]);
 
-  return <div ref={containerRef} className={className} />;
+  return <div ref={ref} className={className} />;
 }
