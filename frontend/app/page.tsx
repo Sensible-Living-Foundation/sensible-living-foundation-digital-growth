@@ -1,4 +1,20 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sensible Living Foundation | Financial Literacy & Food Access",
+  description:
+    "Helping underserved communities in Phoenix build financial freedom and access fresh food through Financial Sense and Sense Gardens. Donate or volunteer today.",
+  openGraph: {
+    title: "Sensible Living Foundation | Financial Literacy & Food Access",
+    description:
+      "Helping underserved communities in Phoenix build financial freedom and access fresh food. Donate or volunteer today.",
+    url: "https://www.sensiblelivingfoundation.org",
+    siteName: "Sensible Living Foundation",
+    images: [{ url: "https://www.sensiblelivingfoundation.org/images/community/com_1.jpeg", width: 1200, height: 630, alt: "Sensible Living Foundation community programs in Phoenix" }],
+    type: "website",
+  },
+};
 
 // Homepage — cherry-picking best elements from all 5 reference sites
 // charity:water: dark hero, yellow CTA, stat dashboard, warm cream, category toggles
