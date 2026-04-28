@@ -2,8 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About | Sensible Living Foundation",
-  description: "Learn about the Sensible Living Foundation, our founder, mission, and vision.",
+  title: "About Us | Sensible Living Foundation — Mission & Story",
+  description:
+    "Learn about the Sensible Living Foundation, our founder's story, and our mission to improve wealth and health outcomes in underserved Phoenix communities.",
 };
 
 export default function About() {
