@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sensible Living Foundation | Financial Literacy & Food Access",
+  description:
+    "Helping underserved communities in Phoenix build financial freedom and access fresh food through Financial Sense and Sense Gardens. Donate or volunteer today.",
+};
 
 // Homepage — cherry-picking best elements from all 5 reference sites
 // charity:water: dark hero, yellow CTA, stat dashboard, warm cream, category toggles
