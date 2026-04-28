@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
@@ -216,7 +216,7 @@ const SECTIONS = [
           "1 tsp honey (optional)",
         ],
         steps: [
-          "Add spinach and liquid to the blender first — this helps it blend smoothly.",
+          "Add spinach and liquid to the blender first - this helps it blend smoothly.",
           "Add banana, frozen berries, and honey if using.",
           "Blend on high for 60 seconds until completely smooth.",
           "If too thick, add a splash more liquid and blend again. Serve immediately.",
@@ -492,7 +492,7 @@ export default function RecipesPage() {
           </h2>
           <p className="text-gray-500 mb-8 leading-relaxed">
             We add new recipes as our gardens grow. Support Sense Gardens and help us bring
-            fresh produce — and fresh ideas — to more families.
+            fresh produce - and fresh ideas - to more families.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/get-involved#donate" className="btn-green">

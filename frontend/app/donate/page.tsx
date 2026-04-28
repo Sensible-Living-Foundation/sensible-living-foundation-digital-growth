@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 
-// Givebutter iframe-based widget — works reliably in Next.js
+// Givebutter iframe-based widget - works reliably in Next.js
 // The custom element approach fails due to SSR hydration timing.
 // Iframe embeds initialize independently of React's lifecycle.
 
@@ -62,7 +62,7 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* Goal progress bar — L4EEnM campaign */}
+      {/* Goal progress bar - L4EEnM campaign */}
       <section className="py-10" style={{ background: "#F0FDF4" }}>
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-center font-serif text-lg font-bold text-gray-700 mb-4">
@@ -76,7 +76,7 @@ export default function DonatePage() {
       <section className="py-24" style={{ background: "#FAF7F0" }}>
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
 
-          {/* Left — impact tiers */}
+          {/* Left - impact tiers */}
           <div>
             <span className="section-label" style={{ color: "#2D6A4F" }}>Your impact</span>
             <h2 className="font-serif text-display-lg text-slf-charcoal mb-6">Every dollar has a job.</h2>
@@ -126,7 +126,7 @@ export default function DonatePage() {
             </div>
           </div>
 
-          {/* Right — Givebutter donation form g6nWXg campaign + stats */}
+          {/* Right - Givebutter donation form g6nWXg campaign + stats */}
           <div className="space-y-6">
             <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-white">
               <GivebutterEmbed campaignId="g6nWXg" height={560} />

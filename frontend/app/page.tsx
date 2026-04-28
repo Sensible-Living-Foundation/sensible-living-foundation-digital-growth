@@ -1,6 +1,6 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
-// Homepage — cherry-picking best elements from all 5 reference sites
+// Homepage - cherry-picking best elements from all 5 reference sites
 // charity:water: dark hero, yellow CTA, stat dashboard, warm cream, category toggles
 // Feeding America: real stories, 4-col action grid, full-bleed hero text overlay
 // Harlem Grown: earth tones, community photography, clean mission block
@@ -24,7 +24,7 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-16 w-full grid md:grid-cols-2 gap-12 items-center">
 
-          {/* Left — mission */}
+          {/* Left - mission */}
           <div>
             <span className="section-label" style={{ color: "#52B788" }}>
               Nonprofit · Community · Impact
@@ -42,7 +42,7 @@ export default function Home() {
               <span className="text-white font-semibold">57% of low-income adults</span> have zero financial safety net.
             </p>
             <p className="text-gray-400 text-base mb-8 max-w-lg">
-              We're changing both — one community, one garden, one financial plan at a time.
+              We're changing both - one community, one garden, one financial plan at a time.
             </p>
 
             {/* charity:water transparency badge */}
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — donation form (charity:water hero form style) */}
+          {/* Right - donation form (charity:water hero form style) */}
           <div className="bg-white rounded-2xl shadow-2xl p-8">
             <h3 className="font-serif text-2xl font-bold text-slf-charcoal mb-1">
               Make a Difference Today
@@ -120,7 +120,7 @@ export default function Home() {
             { n: "10+",       label: "Pilot Locations",     sub: "by 2027" },
             { n: "40+",       label: "Gardens",             sub: "by 2029" },
             { n: "2031",      label: "National Model",      sub: "projected milestone" },
-            { n: "4,000 lbs", label: "Projected Yield",     sub: "target — not yet achieved" },
+            { n: "4,000 lbs", label: "Projected Yield",     sub: "target - not yet achieved" },
           ].map((s) => (
             <div key={s.label} className="py-8 px-6">
               <p className="stat-number text-5xl mb-2" style={{ color: "#1B4332" }}>{s.n}</p>
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
 
           <p className="text-center text-xs font-bold uppercase tracking-widest mb-6 -mt-4" style={{ color: "#2D6A4F" }}>
-            Pilot Programs — Launching 2026
+            Pilot Programs - Launching 2026
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Financial Sense */}
@@ -175,7 +175,7 @@ export default function Home() {
               <div className="bg-white p-8">
                 <p className="text-gray-500 leading-relaxed mb-6">
                   A no-cost, structured financial literacy program covering budgeting, saving, credit,
-                  and wealth-building — designed for individuals and families who need it most,
+                  and wealth-building - designed for individuals and families who need it most,
                   launching in Phoenix in 2026.
                 </p>
                 <div className="flex items-center justify-between">
@@ -203,7 +203,7 @@ export default function Home() {
               </div>
               <div className="bg-white p-8">
                 <p className="text-gray-500 leading-relaxed mb-6">
-                  Vertical and hydroponic garden systems built for urban communities — bringing
+                  Vertical and hydroponic garden systems built for urban communities - bringing
                   fresh food and nutrition education to families in food deserts, starting with
                   pilot programs in Phoenix.
                 </p>
@@ -219,7 +219,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Sense Housing — future pillar teaser */}
+          {/* Sense Housing - future pillar teaser */}
           <div className="mt-6 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8"
             style={{ border: "1px dashed rgba(27,67,50,0.3)", background: "rgba(27,67,50,0.04)" }}>
             <div className="flex-1">
@@ -257,7 +257,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-400 mt-3 text-sm max-w-xl mx-auto">
               These are the kinds of transformations we are designing every program to make possible.
-              This is the future we are building — one family at a time.
+              This is the future we are building - one family at a time.
             </p>
           </div>
 
@@ -267,21 +267,21 @@ export default function Home() {
                 initial: "M",
                 label: "A First-Time Saver",
                 program: "Financial Sense",
-                quote: "Imagine someone who has never had a savings account — completing our 101 curriculum, building an emergency fund, and watching their credit score rise for the first time. That is who we are building this for.",
+                quote: "Imagine someone who has never had a savings account - completing our 101 curriculum, building an emergency fund, and watching their credit score rise for the first time. That is who we are building this for.",
                 color: "#06205C",
               },
               {
                 initial: "F",
                 label: "A Family With Fresh Food",
                 program: "Sense Gardens",
-                quote: "Imagine a family in a Phoenix food desert who gains access to a vertical garden at their community center — and their children grow and eat fresh vegetables for the first time. That is the pilot we are launching.",
+                quote: "Imagine a family in a Phoenix food desert who gains access to a vertical garden at their community center - and their children grow and eat fresh vegetables for the first time. That is the pilot we are launching.",
                 color: "#1B4332",
               },
               {
                 initial: "D",
                 label: "A Future Homeowner",
                 program: "Financial Sense",
-                quote: "Imagine someone who always believed homeownership was impossible — completing our 303 curriculum, improving their credit profile, and working toward their first home. That is what Financial Sense is designed to unlock.",
+                quote: "Imagine someone who always believed homeownership was impossible - completing our 303 curriculum, improving their credit profile, and working toward their first home. That is what Financial Sense is designed to unlock.",
                 color: "#B6703E",
               },
             ].map((story) => (
@@ -293,7 +293,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-slf-charcoal">{story.label}</p>
-                    <p className="text-gray-400 text-xs">Phoenix, AZ — Pilot Phase</p>
+                    <p className="text-gray-400 text-xs">Phoenix, AZ - Pilot Phase</p>
                   </div>
                   <span className="ml-auto text-xs px-3 py-1 rounded-full text-white font-display font-bold"
                     style={{ background: story.color }}>
@@ -318,7 +318,7 @@ export default function Home() {
               The communities we serve have been overlooked for too long.
             </h2>
             <p className="text-gray-400 leading-relaxed mb-8 text-lg">
-              These aren't personal failures. They are systemic gaps — in access, in education,
+              These aren't personal failures. They are systemic gaps - in access, in education,
               in opportunity. The Sensible Living Foundation exists to close them.
             </p>
             <Link href="/about" className="btn-yellow">

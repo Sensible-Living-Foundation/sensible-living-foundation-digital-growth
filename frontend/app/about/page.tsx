@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
@@ -10,7 +10,7 @@ export default function About() {
   return (
     <div>
 
-      {/* Hero — Harlem Grown full-bleed with text overlay */}
+      {/* Hero - Harlem Grown full-bleed with text overlay */}
       <section className="relative flex items-end pb-24 overflow-hidden"
         style={{ background: "linear-gradient(160deg, #1B4332 0%, #1A1A1A 100%)" }}>
         <div className="absolute inset-0 opacity-5"
@@ -24,7 +24,7 @@ export default function About() {
             Rooted in community.<br />Driven by purpose.
           </h1>
           <p className="text-gray-300 text-xl max-w-2xl leading-relaxed">
-            Built on the belief that every person — regardless of zip code — deserves the tools
+            Built on the belief that every person - regardless of zip code - deserves the tools
             to build a healthy and financially secure life.
           </p>
         </div>
@@ -43,13 +43,13 @@ export default function About() {
               outcomes in underserved communities across America.
             </p>
             <p className="text-gray-500 leading-relaxed mb-5">
-              We work at the intersection of financial literacy and food access — two areas that are
-              deeply connected but rarely addressed together. Our programs — Financial Sense and
-              Sense Gardens — are designed to meet communities where they are.
+              We work at the intersection of financial literacy and food access - two areas that are
+              deeply connected but rarely addressed together. Our programs - Financial Sense and
+              Sense Gardens - are designed to meet communities where they are.
             </p>
             <p className="text-gray-500 leading-relaxed">
               We believe lasting change happens when communities are equipped with practical tools,
-              trusted resources, and ongoing support — not one-time handouts.
+              trusted resources, and ongoing support - not one-time handouts.
             </p>
           </div>
           <div className="md:col-span-2">
@@ -60,7 +60,7 @@ export default function About() {
                   { label: "Status",         value: "501(c)(3) Nonprofit" },
                   { label: "Focus Areas",    value: "Financial Literacy & Food Access" },
                   { label: "Communities",    value: "Underserved & Low-Income" },
-                  { label: "Current Focus",  value: "Phoenix, AZ — Pilot Phase" },
+                  { label: "Current Focus",  value: "Phoenix, AZ - Pilot Phase" },
                 ].map((item) => (
                   <div key={item.label}
                     className="flex justify-between py-4 border-b border-gray-200 last:border-0">
@@ -123,12 +123,12 @@ export default function About() {
               <p className="text-gray-600 leading-relaxed text-lg">
                 Our founder grew up in an immigrant household where financial survival was a daily
                 reality. There were no investment accounts, no credit scores to brag about, no safety
-                net. What there was — was hard work, sacrifice, and a quiet determination to give the
+                net. What there was - was hard work, sacrifice, and a quiet determination to give the
                 next generation something better.
               </p>
 
               <p className="text-gray-500 leading-relaxed">
-                The Sensible Living Foundation was born from that lived experience — out of a belief
+                The Sensible Living Foundation was born from that lived experience - out of a belief
                 that the barriers faced by immigrant families and underserved communities are not
                 personal failures. They are systemic gaps that can be closed with practical education,
                 real resources, and genuine community investment.
@@ -164,12 +164,12 @@ export default function About() {
               },
               {
                 label: "Lived Financial Struggle",
-                text: "Not a theory — a lived reality. The programs we build are shaped by what it actually feels like to lack access to financial tools and education.",
+                text: "Not a theory - a lived reality. The programs we build are shaped by what it actually feels like to lack access to financial tools and education.",
                 color: "#06205C",
               },
               {
                 label: "Community-First Vision",
-                text: "The mission is not to serve communities from the outside looking in. It is to build alongside them — with accountability, respect, and long-term commitment.",
+                text: "The mission is not to serve communities from the outside looking in. It is to build alongside them - with accountability, respect, and long-term commitment.",
                 color: "#B6703E",
               },
             ].map((item) => (
@@ -192,7 +192,7 @@ export default function About() {
             <h3 className="font-serif text-3xl font-bold mb-5">What we do every day.</h3>
             <p className="text-gray-200 leading-relaxed text-lg">
               To empower underserved communities by providing financial literacy education
-              and access to fresh food through community gardens — creating lasting pathways
+              and access to fresh food through community gardens - creating lasting pathways
               to health and economic well-being.
             </p>
           </div>
@@ -200,7 +200,7 @@ export default function About() {
             <p className="section-label text-yellow-300">Our Vision</p>
             <h3 className="font-serif text-3xl font-bold mb-5">Where we're going.</h3>
             <p className="text-gray-200 leading-relaxed text-lg">
-              A world where every community — regardless of income or location — has the
+              A world where every community - regardless of income or location - has the
               knowledge, resources, and support to build healthy and financially secure
               lives for generations to come.
             </p>
@@ -220,12 +220,12 @@ export default function About() {
                 The <span style={{ color: "#FFCA0A" }}>3E</span> Model
               </h2>
               <p className="text-gray-300 text-xl leading-relaxed mb-6">
-                This is not about temporary relief. Everything we build — every program, every
-                garden, every partnership — is designed around three connected principles that
+                This is not about temporary relief. Everything we build - every program, every
+                garden, every partnership - is designed around three connected principles that
                 create lasting transformation.
               </p>
               <p className="text-gray-500 leading-relaxed">
-                Most organizations stop at awareness or access. We go further — because real change
+                Most organizations stop at awareness or access. We go further - because real change
                 only happens when education, empowerment, and elevation work together as a single
                 continuous journey.
               </p>
@@ -274,7 +274,7 @@ export default function About() {
             </div>
             <p className="text-gray-400 text-xl leading-relaxed max-w-2xl mx-auto mb-10">
               Every program we build, every partner we bring on, and every community we enter
-              is guided by all three principles — because real, lasting change requires all of them
+              is guided by all three principles - because real, lasting change requires all of them
               working together.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -297,17 +297,17 @@ export default function About() {
             {[
               {
                 num: "01", title: "Meet Communities Where They Are",
-                desc: "We go to the neighborhoods that need us most — schools, churches, community centers, workplaces. No barriers, no transportation required.",
+                desc: "We go to the neighborhoods that need us most - schools, churches, community centers, workplaces. No barriers, no transportation required.",
                 color: "#1B4332",
               },
               {
                 num: "02", title: "Teach Practical, Actionable Skills",
-                desc: "No jargon. No barriers. Real financial and health education that people can use immediately — budgeting worksheets, credit strategies, and hands-on hydroponic garden learning.",
+                desc: "No jargon. No barriers. Real financial and health education that people can use immediately - budgeting worksheets, credit strategies, and hands-on hydroponic garden learning.",
                 color: "#06205C",
               },
               {
                 num: "03", title: "Build Long-Term Sustainability",
-                desc: "We focus on outcomes that last beyond our programs — building financial habits, growing food access, and developing community leaders who carry the mission forward.",
+                desc: "We focus on outcomes that last beyond our programs - building financial habits, growing food access, and developing community leaders who carry the mission forward.",
                 color: "#B6703E",
               },
             ].map((item) => (
@@ -332,7 +332,7 @@ export default function About() {
               Growing from pilot to national movement.
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
-              We are honest about where we are today — and ambitious about where we are going.
+              We are honest about where we are today - and ambitious about where we are going.
               Here is the roadmap.
             </p>
           </div>
@@ -356,7 +356,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ─── SENSE HOUSING — Future Pillar Teaser ─── */}
+      {/* ─── SENSE HOUSING - Future Pillar Teaser ─── */}
       <section className="py-20" style={{ background: "#0D0D0D", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-4 mb-10">
@@ -373,7 +373,7 @@ export default function About() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6 text-xs font-bold uppercase tracking-widest"
                   style={{ background: "rgba(255,255,255,0.05)", color: "#9CA3AF", border: "1px dashed rgba(255,255,255,0.15)" }}>
-                  Future Vision — Not Yet Active
+                  Future Vision - Not Yet Active
                 </div>
                 <h3 className="font-serif text-3xl font-bold text-white mb-5">
                   A Third Pillar Is Coming:<br />
@@ -384,7 +384,7 @@ export default function About() {
                   financial wellness, food access, and healthy living in one integrated model.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  Sense Housing will not be a standalone program — it will be an extension of
+                  Sense Housing will not be a standalone program - it will be an extension of
                   everything we are already building. A community where financial literacy,
                   fresh food access, and stable housing work together to create lasting
                   generational change.
@@ -395,7 +395,7 @@ export default function About() {
                   { icon: "🏠", label: "Housing Support", desc: "Stable, affordable housing as a foundation for everything else" },
                   { icon: "💰", label: "Financial Literacy", desc: "Homeownership education, mortgage readiness, wealth building" },
                   { icon: "🌱", label: "Food Access", desc: "Integrated garden systems built into housing communities" },
-                  { icon: "❤️", label: "Health & Wellness", desc: "Whole-person support — physical, financial, and community health" },
+                  { icon: "❤️", label: "Health & Wellness", desc: "Whole-person support - physical, financial, and community health" },
                 ].map((item) => (
                   <div key={item.label} className="rounded-xl p-5"
                     style={{ background: "rgba(255,255,255,0.03)", border: "1px dashed rgba(255,255,255,0.1)" }}>
@@ -414,7 +414,7 @@ export default function About() {
       <section className="py-20 bg-white text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-serif text-display-md text-slf-charcoal mb-4">Join the mission.</h2>
-          <p className="text-gray-500 mb-8">Whether you donate, volunteer, or spread the word — every action matters.</p>
+          <p className="text-gray-500 mb-8">Whether you donate, volunteer, or spread the word - every action matters.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/get-involved#donate" className="btn-yellow">Donate</Link>
             <Link href="/get-involved#volunteer" className="btn-green">Volunteer</Link>

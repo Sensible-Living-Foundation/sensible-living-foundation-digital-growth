@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import DonationForm from "./DonationForm";
@@ -7,7 +7,7 @@ import Script from "next/script";
 export default function GetInvolved() {
   return (
     <div>
-      {/* HubSpot embed script — loads once for all 3 forms */}
+      {/* HubSpot embed script - loads once for all 3 forms */}
       <Script
         src="https://js-na2.hsforms.net/forms/embed/245745020.js"
         strategy="afterInteractive"
@@ -25,7 +25,7 @@ export default function GetInvolved() {
           <span className="section-label" style={{ color: "#52B788" }}>Take Action</span>
           <h1 className="font-serif text-display-xl text-white mb-6">Get Involved</h1>
           <p className="text-gray-300 text-xl max-w-2xl">
-            Every action — big or small — moves the mission forward. Choose yours below.
+            Every action - big or small - moves the mission forward. Choose yours below.
           </p>
         </div>
       </section>
@@ -104,14 +104,14 @@ export default function GetInvolved() {
             <span className="section-label" style={{ color: "#2D6A4F" }}>Volunteer</span>
             <h2 className="font-serif text-display-lg text-slf-charcoal">Give your time.</h2>
             <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-              No experience required — just the desire to make a difference.
+              No experience required - just the desire to make a difference.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {[
-              { icon: "🌱", title: "Garden Volunteer",       desc: "Support our hydroponic and vertical garden systems — set up growing pods, help prepare and maintain systems, assist with harvest and distribution, and support hands-on educational demonstrations for community participants." },
+              { icon: "🌱", title: "Garden Volunteer",       desc: "Support our hydroponic and vertical garden systems - set up growing pods, help prepare and maintain systems, assist with harvest and distribution, and support hands-on educational demonstrations for community participants." },
               { icon: "📣", title: "Community Outreach",     desc: "Spread the word through local events, flyers, and grassroots outreach in your neighborhood." },
-              { icon: "💻", title: "Skills-Based Volunteer", desc: "Contribute professional skills — design, marketing, tech, legal, or accounting — to support operations." },
+              { icon: "💻", title: "Skills-Based Volunteer", desc: "Contribute professional skills - design, marketing, tech, legal, or accounting - to support operations." },
             ].map((item) => (
               <div key={item.title} className="flex gap-5 p-6 rounded-2xl border border-gray-100 hover:border-slf-green-mid hover:shadow-card transition-all">
                 <span className="text-3xl mt-1">{item.icon}</span>
@@ -133,13 +133,13 @@ export default function GetInvolved() {
                   Training financial educators is a core part of our long-term vision. As we build out the Financial Sense curriculum and educator pathway, we want to hear from people who are passionate about financial literacy and community education.
                 </p>
                 <p className="text-xs font-semibold" style={{ color: "#2D6A4F" }}>
-                  Join our interest list — we will reach out when the educator training program launches.
+                  Join our interest list - we will reach out when the educator training program launches.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* VOLUNTEER FORM — HubSpot */}
+          {/* VOLUNTEER FORM - HubSpot */}
           <div className="max-w-2xl mx-auto">
             <div className="card !p-10">
               <h3 className="font-serif text-2xl font-bold text-slf-charcoal mb-6 text-center">
@@ -171,7 +171,7 @@ export default function GetInvolved() {
               { icon: "🏫", title: "Schools & School Districts",                      desc: "Bring garden education and wellness programming to your campus. We'd love to explore how our programs can support your students, teachers, and community." },
               { icon: "🏘️", title: "Community Centers & Youth-Serving Organizations", desc: "We align with organizations already working where the need is greatest. Let's talk about how our programs can support the communities you serve." },
               { icon: "🏢", title: "Employers & Corporate Teams",                      desc: "Create meaningful community impact through your organization. We make it easy for companies to invest in the communities where their people live and work." },
-              { icon: "🤝", title: "Individuals, Families & Sponsors",                desc: "You don't have to be a company to make a difference. There are meaningful ways to support the mission — on any budget and at any level." },
+              { icon: "🤝", title: "Individuals, Families & Sponsors",                desc: "You don't have to be a company to make a difference. There are meaningful ways to support the mission - on any budget and at any level." },
             ].map((item) => (
               <div key={item.title} className="rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors bg-white/5 flex flex-col">
                 <span className="text-4xl mb-5 block">{item.icon}</span>
@@ -225,7 +225,7 @@ export default function GetInvolved() {
             Add Impact to Your Inbox
           </h2>
           <p className="text-gray-500 mb-8">
-            Program updates, impact stories, and ways to help — no spam, ever.
+            Program updates, impact stories, and ways to help - no spam, ever.
           </p>
           <div className="max-w-md mx-auto text-left">
             <div

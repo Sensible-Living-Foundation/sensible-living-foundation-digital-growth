@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 
@@ -6,7 +6,7 @@ export default function FinancialSense() {
   return (
     <div>
 
-      {/* Hero — dark blue, bold mission, red CTA */}
+      {/* Hero - dark blue, bold mission, red CTA */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden"
         style={{ background: "linear-gradient(135deg, #06205C 0%, #182857 60%, #1a3a6b 100%)" }}>
         <div className="absolute inset-0 opacity-10"
@@ -48,14 +48,14 @@ export default function FinancialSense() {
           <div className="bg-white rounded-xl shadow-2xl p-8">
             <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest"
               style={{ background: "rgba(6,32,92,0.08)", color: "#06205C" }}>
-              Launching 2026 — Join the Interest List
+              Launching 2026 - Join the Interest List
             </div>
             <h3 className="text-xl font-bold mb-2" style={{ color: "#06205C" }}>
               Be First to Enroll
             </h3>
             <p className="text-gray-500 text-sm mb-6">
               Our Financial Sense program is launching in Phoenix in 2026. Join the interest list and
-              we'll reach out when enrollment opens — always at no cost.
+              we'll reach out when enrollment opens - always at no cost.
             </p>
             <form className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
@@ -87,7 +87,7 @@ export default function FinancialSense() {
           {[
             { number: "No Cost",     label: "To All Participants" },
             { number: "2026",        label: "Launching in Phoenix" },
-            { number: "Guided",      label: "Structured Pathway — Beginner to Advanced" },
+            { number: "Guided",      label: "Structured Pathway - Beginner to Advanced" },
           ].map((s) => (
             <div key={s.label} className="py-6">
               <p className="font-serif text-4xl font-extrabold mb-1" style={{ color: "#06205C" }}>{s.number}</p>
@@ -97,7 +97,7 @@ export default function FinancialSense() {
         </div>
       </section>
 
-      {/* 3E Model — core framework */}
+      {/* 3E Model - core framework */}
       <section className="relative py-24 overflow-hidden" style={{ background: "#06205C" }}>
         <style>{`
           @keyframes fs-floatA { 0%,100%{transform:translateY(0px);} 50%{transform:translateY(-16px);} }
@@ -138,7 +138,7 @@ export default function FinancialSense() {
               {
                 label: "Educate",
                 tagline: "Knowledge that sticks",
-                desc: "Practical, no-jargon financial literacy — budgeting, credit, savings, debt — taught in a way that participants can apply the same day they learn it.",
+                desc: "Practical, no-jargon financial literacy - budgeting, credit, savings, debt - taught in a way that participants can apply the same day they learn it.",
                 accentColor: "#52B788",
                 delay: "0s",
                 float: "fs-floatA 10s ease-in-out infinite",
@@ -189,7 +189,7 @@ export default function FinancialSense() {
           {/* CTA */}
           <div className="text-center" style={{ animation:"fs-fadeUp 0.6s ease 0.45s both" }}>
             <p className="text-blue-300 text-sm mb-5">
-              Every level of Financial Sense is built around all three principles — working together.
+              Every level of Financial Sense is built around all three principles - working together.
             </p>
             <Link href="/about#3e-model"
               className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-sm uppercase tracking-widest transition-all hover:scale-105 hover:opacity-90"
@@ -201,7 +201,7 @@ export default function FinancialSense() {
         </div>
       </section>
 
-      {/* Your Path — guided journey, not a curriculum reveal */}
+      {/* Your Path - guided journey, not a curriculum reveal */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -210,7 +210,7 @@ export default function FinancialSense() {
               A clear path from where you are to where you want to be.
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-              Financial Sense meets you wherever you are and walks with you — stage by stage —
+              Financial Sense meets you wherever you are and walks with you - stage by stage —
               toward lasting financial confidence.
             </p>
           </div>
@@ -220,7 +220,7 @@ export default function FinancialSense() {
               {
                 step: "01",
                 title: "Start With the Basics",
-                desc: "Build a strong foundation — budgeting, saving, and understanding money in a way that's practical and immediately useful.",
+                desc: "Build a strong foundation - budgeting, saving, and understanding money in a way that's practical and immediately useful.",
                 color: "#06205C",
               },
               {
@@ -232,7 +232,7 @@ export default function FinancialSense() {
               {
                 step: "03",
                 title: "Reach Financial Readiness",
-                desc: "Come away with improved credit, a savings foundation, and a real plan for your financial future — and a certificate to show for it.",
+                desc: "Come away with improved credit, a savings foundation, and a real plan for your financial future - and a certificate to show for it.",
                 color: "#1a3a6b",
               },
             ].map((item) => (
@@ -344,7 +344,7 @@ export default function FinancialSense() {
               style={{ background: "linear-gradient(135deg, #06205C, #182857)" }}>
               <div className="text-center text-white px-8">
                 <p className="font-serif text-3xl font-extrabold mb-4">Our Goal</p>
-                <p className="text-blue-200 text-lg">Equip every participant with the knowledge, tools, and confidence to build lasting financial stability — and pass it on to their community.</p>
+                <p className="text-blue-200 text-lg">Equip every participant with the knowledge, tools, and confidence to build lasting financial stability - and pass it on to their community.</p>
               </div>
             </div>
           </div>
@@ -358,7 +358,7 @@ export default function FinancialSense() {
             Financial Opportunity for All.
           </h2>
           <p className="text-red-100 mb-8 text-lg">
-            Bring Financial Sense to your school, church, or organization — at no cost.
+            Bring Financial Sense to your school, church, or organization - at no cost.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/get-involved#partner"
