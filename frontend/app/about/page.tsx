@@ -2,8 +2,21 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About | Sensible Living Foundation",
-  description: "Learn about the Sensible Living Foundation, our founder, mission, and vision.",
+  title: "About Us | Sensible Living Foundation - Mission & Story",
+  description:
+    "Learn about the Sensible Living Foundation, our founder's story, and our mission to improve wealth and health outcomes in underserved Phoenix communities.",
+  alternates: {
+    canonical: "https://www.sensiblelivingfoundation.org/about",
+  },
+  openGraph: {
+    title: "About Us | Sensible Living Foundation",
+    description:
+      "Learn about our founder's story and our mission to improve wealth and health outcomes in underserved Phoenix communities.",
+    url: "https://www.sensiblelivingfoundation.org/about",
+    siteName: "Sensible Living Foundation",
+    images: [{ url: "https://www.sensiblelivingfoundation.org/images/founder/founder.jpg", width: 1200, height: 630, alt: "Sensible Living Foundation founder" }],
+    type: "website",
+  },
 };
 
 export default function About() {
