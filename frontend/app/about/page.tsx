@@ -147,9 +147,9 @@ export default function About() {
               </div>
 
               <div className="pt-4">
-                <Link href="/get-involved#donate" className="btn-green">
+                <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="btn-green">
                   Support the Mission
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -416,7 +416,7 @@ export default function About() {
           <h2 className="font-serif text-display-md text-slf-charcoal mb-4">Join the mission.</h2>
           <p className="text-gray-500 mb-8">Whether you donate, volunteer, or spread the word — every action matters.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/get-involved#donate" className="btn-yellow">Donate</Link>
+            <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="btn-yellow">Donate</a>
             <Link href="/get-involved#volunteer" className="btn-green">Volunteer</Link>
           </div>
         </div>

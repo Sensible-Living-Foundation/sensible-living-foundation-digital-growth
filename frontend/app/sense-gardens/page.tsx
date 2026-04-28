@@ -21,7 +21,7 @@ export default function SenseGardens() {
               Sense Gardens is building a modern solution: space-efficient, water-smart vertical and hydroponic garden systems designed for urban communities — starting with pilot programs right here in Phoenix.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a className="px-8 py-4 rounded font-bold text-sm uppercase tracking-widest transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }} href="/get-involved#donate">Support the Mission</a>
+              <a className="px-8 py-4 rounded font-bold text-sm uppercase tracking-widest transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }} href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer">Support the Mission</a>
               <a className="px-8 py-4 rounded border-2 border-gray-500 text-white font-bold text-sm uppercase tracking-widest hover:border-white transition-colors" href="/sense-gardens/map">View the Map</a>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default function SenseGardens() {
               <button className="py-3 border-2 rounded font-bold text-sm transition-colors" style={{ borderColor: "#e5e7eb", color: "#374151" }}>Give Monthly</button>
             </div>
             <input type="email" placeholder="Email address" className="w-full px-4 py-3 border border-gray-200 rounded text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-            <button type="submit" className="w-full py-4 font-bold text-sm uppercase tracking-widest rounded transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }}>Donate Now</button>
+            <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="w-full py-4 font-bold text-sm uppercase tracking-widest rounded transition-colors hover:opacity-90 flex items-center justify-center" style={{ background: "#FFCA0A", color: "#222520" }}>Donate Now</a>
             <p className="text-xs text-gray-400 text-center mt-4">Secure donation via Givebutter · Tax-deductible · EIN: 99-2323968</p>
           </div>
         </div>
@@ -317,7 +317,7 @@ export default function SenseGardens() {
               <div key={item.amt} className="border border-gray-100 rounded-xl p-8 hover:shadow-md transition-shadow group cursor-pointer hover:border-yellow-300">
                 <p className="font-serif text-4xl font-extrabold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors">{item.amt}</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">{item.desc}</p>
-                <a className="inline-block px-6 py-3 rounded text-sm font-bold uppercase tracking-wide transition-colors" style={{ background: "#FFCA0A", color: "#222520" }} href="/get-involved#donate">Give {item.amt}</a>
+                <a className="inline-block px-6 py-3 rounded text-sm font-bold uppercase tracking-wide transition-colors" style={{ background: "#FFCA0A", color: "#222520" }} href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer">Give {item.amt}</a>
               </div>
             ))}
           </div>

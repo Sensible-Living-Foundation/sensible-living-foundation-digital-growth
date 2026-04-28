@@ -495,9 +495,9 @@ export default function RecipesPage() {
             fresh produce — and fresh ideas — to more families.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/get-involved#donate" className="btn-green">
+            <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="btn-green">
               Support the Garden
-            </Link>
+            </a>
             <Link href="/sense-gardens" className="btn-ghost" style={{ color: "#1B4332", border: "2px solid #1B4332" }}>
               Explore Sense Gardens
             </Link>
