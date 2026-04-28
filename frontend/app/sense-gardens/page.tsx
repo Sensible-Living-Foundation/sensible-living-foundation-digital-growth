@@ -139,9 +139,9 @@ export default function SenseGardens() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { img: "/images/gardens/vertical.jpeg", alt: "Vertical Garden Systems", title: "Vertical Garden Systems", desc: "Growing systems that stack plants vertically, bringing fresh food to schools, community centers, and neighborhood sites with no traditional garden space." },
-              { img: "/images/gardens/Hydrophonic.jpeg", alt: "Hydroponic Growing", title: "Hydroponic Growing", desc: "A soil-free growing method that uses significantly less water than traditional soil gardening — making it practical and sustainable in Phoenix's desert climate." },
-              { img: "/images/gardens/modular.jpeg", alt: "Modular Pilot Systems", title: "Modular Pilot Systems", desc: "Each pilot system is designed to start small and grow alongside our community partnerships — practical and accessible from day one." },
+              { img: "/images/gardens/vertical.jpeg", alt: "Vertical tower garden system growing fresh produce for urban communities in Phoenix", title: "Vertical Garden Systems", desc: "Growing systems that stack plants vertically, bringing fresh food to schools, community centers, and neighborhood sites with no traditional garden space." },
+              { img: "/images/gardens/Hydrophonic.jpeg", alt: "Hydroponic growing system providing soil-free fresh food access in Phoenix food deserts", title: "Hydroponic Growing", desc: "A soil-free growing method that uses significantly less water than traditional soil gardening — making it practical and sustainable in Phoenix's desert climate." },
+              { img: "/images/gardens/modular.jpeg", alt: "Modular hydroponic garden system built for schools and community centers in Phoenix", title: "Modular Pilot Systems", desc: "Each pilot system is designed to start small and grow alongside our community partnerships — practical and accessible from day one." },
             ].map((card) => (
               <div key={card.title} className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="relative h-48 w-full">

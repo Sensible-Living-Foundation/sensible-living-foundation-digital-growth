@@ -95,7 +95,7 @@ export default function About() {
                 <div className="relative h-80 w-full overflow-hidden">
                   <Image
                     src="/images/founder/founder.jpg"
-                    alt="Founder of the Sensible Living Foundation"
+                    alt="Sensible Living Foundation founder dedicated to financial literacy and food access in Phoenix, AZ"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 400px"
