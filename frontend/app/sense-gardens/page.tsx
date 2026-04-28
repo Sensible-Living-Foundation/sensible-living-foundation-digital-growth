@@ -339,63 +339,25 @@ export default function SenseGardens() {
           </div>
 
           {/* ── Clickable map preview ── */}
-          <Link href="/sense-gardens/map">
-            <div
-              className="h-80 rounded-2xl overflow-hidden border border-gray-600 cursor-pointer group transition-all duration-300 hover:border-green-400 hover:shadow-2xl relative"
-              style={{ background: "#0A1A10" }}
-            >
-              {/* Dot grid background */}
-              <div
-                className="absolute inset-0 opacity-20"
-                style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #52B788 1px, transparent 0)", backgroundSize: "24px 24px" }}
+          <div className="rounded-2xl overflow-hidden border border-gray-600" style={{ background: "#0A1A10" }}>
+            <div className="relative h-64 pointer-events-none">
+              <iframe
+                src="/sense-gardens/map?preview=true"
+                title="Sense Gardens food desert map preview"
+                className="w-full h-full border-0"
+                scrolling="no"
               />
-
-              {/* Food desert zone previews */}
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute opacity-30 group-hover:opacity-50 transition-opacity duration-500" style={{ background: "#E24B4A", width: 140, height: 80, top: "25%", left: "18%", borderRadius: 6 }} />
-                <div className="absolute opacity-25 group-hover:opacity-45 transition-opacity duration-500" style={{ background: "#E07B39", width: 110, height: 70, top: "35%", left: "38%", borderRadius: 6 }} />
-                <div className="absolute opacity-20 group-hover:opacity-40 transition-opacity duration-500" style={{ background: "#BA7517", width: 130, height: 90, top: "45%", left: "28%", borderRadius: 6 }} />
-                <div className="absolute opacity-20 group-hover:opacity-35 transition-opacity duration-500" style={{ background: "#E24B4A", width: 90, height: 60, top: "20%", left: "55%", borderRadius: 6 }} />
-                <div className="absolute opacity-15 group-hover:opacity-30 transition-opacity duration-500" style={{ background: "#E07B39", width: 100, height: 65, top: "55%", left: "60%", borderRadius: 6 }} />
-              </div>
-
-              {/* SLF hub pins */}
-              {[
-                { top: "38%", left: "30%", color: "#52B788" },
-                { top: "28%", left: "22%", color: "#52B788" },
-                { top: "32%", left: "42%", color: "#52B788" },
-                { top: "44%", left: "56%", color: "#FFCA0A" },
-                { top: "55%", left: "25%", color: "#FFCA0A" },
-                { top: "20%", left: "58%", color: "#E07B39" },
-              ].map((pin, i) => (
-                <div
-                  key={i}
-                  className="absolute w-6 h-6 rounded-full border-2 border-white flex items-center justify-center font-bold group-hover:scale-110 transition-transform duration-300 z-10"
-                  style={{ background: pin.color, top: pin.top, left: pin.left, color: "#0A2010", fontSize: 10 }}
-                >
-                  S
-                </div>
-              ))}
-
-              {/* Overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center z-20" style={{ background: "rgba(10,26,16,0.55)" }}>
-                <div
-                  className="px-4 py-1.5 rounded-full text-xs font-bold mb-3 transition-all duration-300"
-                  style={{ background: "rgba(82,183,136,0.2)", border: "1px solid rgba(82,183,136,0.4)", color: "#86EFAC" }}
-                >
-                  Interactive Map — Live Now
-                </div>
-                <p className="text-white font-semibold text-lg mb-1 font-serif text-center px-4">Explore the Food Desert Map</p>
-                <p className="text-gray-400 text-sm mb-5 text-center px-4">Phoenix · Arizona · USDA data · Hub locations</p>
-                <div
-                  className="px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 group-hover:scale-105"
-                  style={{ background: "#FFCA0A", color: "#1A1A1A" }}
-                >
-                  Open Full Map →
-                </div>
-              </div>
             </div>
-          </Link>
+            <div className="p-4 flex justify-center" style={{ background: "#0A1A10" }}>
+              <Link
+                href="/sense-gardens/map"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:opacity-90"
+                style={{ background: "#FFCA0A", color: "#1A1A1A" }}
+              >
+                Open Full Map →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
