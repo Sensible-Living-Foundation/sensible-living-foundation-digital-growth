@@ -4,8 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function SenseGardens() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Sense Gardens",
+    "description": "Vertical and hydroponic garden systems bringing fresh food and nutrition education to Phoenix food desert communities.",
+    "url": "https://www.sensiblelivingfoundation.org/sense-gardens",
+    "serviceType": "Community Garden Program",
+    "areaServed": { "@type": "City", "name": "Phoenix", "addressRegion": "AZ" },
+    "provider": {
+      "@type": "Organization",
+      "name": "Sensible Living Foundation",
+      "url": "https://www.sensiblelivingfoundation.org"
+    }
+  };
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       {/* ── Hero ── */}
       <section className="min-h-[90vh] flex items-center" style={{ background: "#222520" }}>
         <div className="max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center w-full">

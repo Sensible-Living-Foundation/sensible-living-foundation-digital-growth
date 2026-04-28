@@ -3,8 +3,24 @@
 import Link from "next/link";
 
 export default function FinancialSense() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOccupationalProgram",
+    "name": "Financial Sense",
+    "description": "No-cost, practical financial literacy education for individuals, families, and communities in Phoenix. Covering budgeting, saving, credit, and wealth-building.",
+    "url": "https://www.sensiblelivingfoundation.org/financial-sense",
+    "educationalProgramMode": "In person",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "provider": {
+      "@type": "Organization",
+      "name": "Sensible Living Foundation",
+      "url": "https://www.sensiblelivingfoundation.org"
+    }
+  };
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* Hero — dark blue, bold mission, red CTA */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden"

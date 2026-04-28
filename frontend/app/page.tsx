@@ -8,8 +8,27 @@ import Link from "next/link";
 // NGPF: impact metrics, partner logos
 
 export default function Home() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sensible Living Foundation",
+    "url": "https://www.sensiblelivingfoundation.org",
+    "logo": "https://www.sensiblelivingfoundation.org/images/logo/logo-primary.svg",
+    "description": "A nonprofit dedicated to improving wealth and health outcomes in underserved communities through Financial Sense and Sense Gardens programs.",
+    "foundingDate": "2023",
+    "taxID": "99-2323968",
+    "address": { "@type": "PostalAddress", "addressLocality": "Phoenix", "addressRegion": "AZ", "addressCountry": "US" },
+    "sameAs": [
+      "https://www.instagram.com/sensiblelivingfoundation",
+      "https://www.facebook.com/sensiblelivingfoundation",
+      "https://www.linkedin.com/company/sensible-living-foundation",
+      "https://www.youtube.com/@sensiblelivingfoundation"
+    ]
+  };
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ─── HERO ─── charity:water split + Feeding America full-bleed overlay */}
       <section className="relative min-h-screen flex items-center overflow-hidden"

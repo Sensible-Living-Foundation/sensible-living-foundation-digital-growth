@@ -5,8 +5,22 @@ import DonationForm from "./DonationForm";
 import Script from "next/script";
 
 export default function GetInvolved() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Sensible Living Foundation",
+    "url": "https://www.sensiblelivingfoundation.org",
+    "description": "Donate, volunteer, or partner with the Sensible Living Foundation to bring financial literacy and food access programs to Phoenix communities.",
+    "taxID": "99-2323968",
+    "potentialAction": {
+      "@type": "DonateAction",
+      "target": "https://givebutter.com/sensefund"
+    }
+  };
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       {/* HubSpot embed script — loads once for all 3 forms */}
       <Script
         src="https://js-na2.hsforms.net/forms/embed/245745020.js"
