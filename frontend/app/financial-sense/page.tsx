@@ -1,8 +1,37 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 
 export default function FinancialSense() {
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", phone: "" });
+  const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  async function handleInterestSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!formData.email) return;
+    setFormStatus("loading");
+    try {
+      const res = await fetch("/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          phone: formData.phone || undefined,
+        }),
+      });
+      setFormStatus(res.ok ? "success" : "error");
+    } catch {
+      setFormStatus("error");
+    }
+  }
+
+  function updateField(field: keyof typeof formData) {
+    return (e: React.ChangeEvent<HTMLInputElement>) =>
+      setFormData(prev => ({ ...prev, [field]: e.target.value }));
+  }
   return (
     <div>
 
@@ -57,23 +86,38 @@ export default function FinancialSense() {
               Our Financial Sense program is launching in Phoenix in 2026. Join the interest list and
               we'll reach out when enrollment opens — always at no cost.
             </p>
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <input type="text" placeholder="First Name"
-                  className="px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
-                <input type="text" placeholder="Last Name"
-                  className="px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
+            {formStatus === "success" ? (
+              <div className="py-6 text-center">
+                <p className="font-semibold text-lg" style={{ color: "#06205C" }}>
+                  You're on the list! We'll reach out when enrollment opens.
+                </p>
               </div>
-              <input type="email" placeholder="Email Address"
-                className="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
-              <input type="tel" placeholder="Phone Number (optional)"
-                className="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
-              <button type="submit"
-                className="w-full py-4 text-white font-bold text-sm uppercase tracking-wide rounded transition-colors hover:opacity-90"
-                style={{ background: "#E1251B" }}>
-                Join the Interest List
-              </button>
-            </form>
+            ) : (
+              <form className="space-y-4" onSubmit={handleInterestSubmit}>
+                <div className="grid grid-cols-2 gap-3">
+                  <input type="text" placeholder="First Name" value={formData.firstName}
+                    onChange={updateField("firstName")}
+                    className="px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
+                  <input type="text" placeholder="Last Name" value={formData.lastName}
+                    onChange={updateField("lastName")}
+                    className="px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
+                </div>
+                <input type="email" placeholder="Email Address" value={formData.email}
+                  onChange={updateField("email")} required
+                  className="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
+                <input type="tel" placeholder="Phone Number (optional)" value={formData.phone}
+                  onChange={updateField("phone")}
+                  className="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
+                <button type="submit" disabled={formStatus === "loading"}
+                  className="w-full py-4 text-white font-bold text-sm uppercase tracking-wide rounded transition-colors hover:opacity-90 disabled:opacity-60"
+                  style={{ background: "#E1251B" }}>
+                  {formStatus === "loading" ? "Submitting..." : "Join the Interest List"}
+                </button>
+                {formStatus === "error" && (
+                  <p className="text-red-500 text-sm text-center">Something went wrong. Please try again.</p>
+                )}
+              </form>
+            )}
             <p className="text-xs text-gray-400 text-center mt-4">
               Always at no cost. No financial product sales. We'll contact you when enrollment opens.
             </p>

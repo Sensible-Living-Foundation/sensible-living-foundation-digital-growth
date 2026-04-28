@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterForm from "./components/NewsletterForm";
 
 // Homepage — cherry-picking best elements from all 5 reference sites
 // charity:water: dark hero, yellow CTA, stat dashboard, warm cream, category toggles
@@ -424,11 +425,7 @@ export default function Home() {
             Get program updates, pilot milestones, and ways to get involved.
             No spam. Unsubscribe anytime.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input type="text" placeholder="Your name" className="input flex-1 !rounded" />
-            <input type="email" placeholder="Email address" className="input flex-1 !rounded" />
-            <button className="btn-yellow !rounded !py-3">Subscribe</button>
-          </div>
+          <NewsletterForm />
         </div>
       </section>
 
