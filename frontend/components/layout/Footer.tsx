@@ -140,6 +140,14 @@ export default function Footer() {
                 {b}
               </span>
             ))}
+            <Link href="/privacy-policy"
+              className="text-xs px-3 py-1 rounded-full border border-white/10 text-gray-500 hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms"
+              className="text-xs px-3 py-1 rounded-full border border-white/10 text-gray-500 hover:text-white transition-colors">
+              Terms of Use
+            </Link>
           </div>
           <div className="flex items-center gap-2">
             {socials.map((s) => (
