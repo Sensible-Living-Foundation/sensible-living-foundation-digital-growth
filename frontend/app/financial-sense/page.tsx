@@ -35,12 +35,14 @@ export default function FinancialSense() {
               >
                 Request Programming
               </Link>
-              <Link
-                href="/get-involved#donate"
+              <a
+                href="https://givebutter.com/sensefund"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 rounded border-2 border-white text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-blue-900 transition-colors"
               >
                 Support the Program
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -365,10 +367,10 @@ export default function FinancialSense() {
               className="bg-white text-red-600 px-8 py-4 rounded font-bold text-sm uppercase tracking-wide hover:bg-gray-100 transition-colors">
               Request Programming
             </Link>
-            <Link href="/get-involved#donate"
+            <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 rounded font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-colors">
               Donate to the Program
-            </Link>
+            </a>
           </div>
         </div>
       </section>

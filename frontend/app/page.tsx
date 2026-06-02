@@ -55,9 +55,9 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Link href="/get-involved#donate" className="btn-yellow">
+              <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="btn-yellow">
                 Give Today
-              </Link>
+              </a>
               <Link href="/about" className="btn-ghost">
                 Our Story
               </Link>
@@ -90,18 +90,21 @@ export default function Home() {
             {/* Amount grid */}
             <div className="grid grid-cols-3 gap-2 mb-5">
               {["$25", "$50", "$100", "$250", "$500", "Other"].map((amt) => (
-                <button key={amt}
-                  className="py-3 text-sm font-bold border-2 border-gray-100 rounded hover:border-yellow-400 transition-colors text-gray-700">
+                <a key={amt}
+                  href="https://givebutter.com/sensefund"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-3 text-sm font-bold border-2 border-gray-100 rounded hover:border-yellow-400 transition-colors text-gray-700 flex items-center justify-center">
                   {amt}
-                </button>
+                </a>
               ))}
             </div>
 
             <input type="email" placeholder="Your email address" className="input mb-3" />
 
-            <button className="btn-yellow w-full justify-center !rounded">
+            <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="btn-yellow w-full justify-center !rounded">
               Donate Now →
-            </button>
+            </a>
 
             <p className="text-center text-xs text-gray-400 mt-3">
               Secure · Tax-deductible · No fees
@@ -359,7 +362,7 @@ export default function Home() {
               {
                 icon: "❤️", title: "Donate",
                 desc: "Help fund the development of Sense Gardens pilot sites and Financial Sense programming in Phoenix.",
-                href: "/get-involved#donate", cta: "Give Now",
+                href: "https://givebutter.com/sensefund", cta: "Give Now",
                 bg: "#1B4332",
               },
               {
@@ -387,11 +390,19 @@ export default function Home() {
                 <span className="text-4xl mb-5">{item.icon}</span>
                 <h3 className="font-display font-bold text-lg mb-3">{item.title}</h3>
                 <p className="text-sm opacity-80 leading-relaxed mb-8 flex-1">{item.desc}</p>
-                <Link href={item.href}
-                  className="inline-flex items-center justify-center py-3 rounded font-display font-bold text-xs uppercase tracking-widest transition-all"
-                  style={{ background: "#FFCA0A", color: "#1A1A1A" }}>
-                  {item.cta} →
-                </Link>
+                {item.href.startsWith("http") ? (
+                  <a href={item.href} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center py-3 rounded font-display font-bold text-xs uppercase tracking-widest transition-all"
+                    style={{ background: "#FFCA0A", color: "#1A1A1A" }}>
+                    {item.cta} →
+                  </a>
+                ) : (
+                  <Link href={item.href}
+                    className="inline-flex items-center justify-center py-3 rounded font-display font-bold text-xs uppercase tracking-widest transition-all"
+                    style={{ background: "#FFCA0A", color: "#1A1A1A" }}>
+                    {item.cta} →
+                  </Link>
+                )}
               </div>
             ))}
           </div>
