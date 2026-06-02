@@ -116,24 +116,33 @@ function MapContent() {
       const color = PHASE_COLORS[hub.phase];
       const el = document.createElement("div");
       el.style.cssText = `
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
         border-radius: 50%;
-        background: linear-gradient(135deg, ${color}, ${color}cc);
-        border: 2.5px solid rgba(255,255,255,0.9);
+        background: ${color};
+        border: 2.5px solid white;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 800;
         font-family: Georgia, serif;
         color: #0A2010;
-        animation: hub-glow 2s ease-in-out infinite;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.55);
+        transition: transform 0.15s, box-shadow 0.15s;
         user-select: none;
       `;
       el.textContent = "S";
 
+      el.addEventListener("mouseenter", () => {
+        el.style.transform = "scale(1.2)";
+        el.style.boxShadow = "0 4px 16px rgba(0,0,0,0.7)";
+      });
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "scale(1)";
+        el.style.boxShadow = "0 2px 10px rgba(0,0,0,0.55)";
+      });
       el.addEventListener("click", () => {
         setSelectedHub(hub);
         map.flyTo({ center: [hub.lng, hub.lat], zoom: 13, duration: 800 });
@@ -189,7 +198,6 @@ function MapContent() {
       <Script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js" onLoad={() => setScriptLoaded(true)} />
       {/* eslint-disable-next-line @next/next/no-css-tags */}
       <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
-      <style>{`@keyframes hub-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.6), 0 4px 12px rgba(0,0,0,0.5); } 50% { box-shadow: 0 0 0 7px rgba(255,255,255,0), 0 4px 12px rgba(0,0,0,0.5); } }`}</style>
 
       <div style={{ paddingTop: "72px", height: "100vh", display: "flex", flexDirection: "column", background: "#0A0A0A" }}>
 
@@ -231,62 +239,23 @@ function MapContent() {
             </button>
           </form>
 
-        {!isPreview && (
-          <div style={{
-            background: "rgba(10,10,10,0.95)",
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
-            padding: "12px 20px",
-            display: "flex",
-            alignItems: "center",
-            gap: 14,
-            flexWrap: "wrap",
-            flexShrink: 0,
-            zIndex: 10,
-          }}>
-            <div style={{ flex: "0 0 auto" }}>
-              <p style={{ color: "#52B788", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 1 }}>Sensible Living Foundation</p>
-              <p style={{ color: "white", fontSize: 15, fontWeight: 700, fontFamily: "Georgia, serif", margin: 0 }}>Sense Gardens - Food Desert Map</p>
+          {searchResult && (
+            <div style={{
+              background: "rgba(82,183,136,0.15)", border: "1px solid rgba(82,183,136,0.3)",
+              borderRadius: 8, padding: "7px 12px", fontSize: 12, color: "#86EFAC",
+              flex: "1 1 180px", maxWidth: 380,
+            }}>
+              {searchResult}
             </div>
-
-            <form onSubmit={handleZipSearch} style={{ display: "flex", gap: 8, flex: "1 1 240px", maxWidth: 340 }}>
-              <input
-                type="text"
-                value={searchZip}
-                onChange={e => setSearchZip(e.target.value)}
-                placeholder="Search any zip code..."
-                maxLength={5}
-                style={{
-                  flex: 1, padding: "7px 12px", borderRadius: 8,
-                  background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)",
-                  color: "white", fontSize: 13, outline: "none",
-                }}
-              />
-              <button type="submit" disabled={searching} style={{
-                padding: "7px 14px", borderRadius: 8, background: "#52B788",
-                color: "#0A2010", fontSize: 13, fontWeight: 700, border: "none", cursor: "pointer",
-              }}>
-                {searching ? "..." : "Search"}
-              </button>
-            </form>
-
-            {searchResult && (
-              <div style={{
-                background: "rgba(82,183,136,0.15)", border: "1px solid rgba(82,183,136,0.3)",
-                borderRadius: 8, padding: "7px 12px", fontSize: 12, color: "#86EFAC",
-                flex: "1 1 180px", maxWidth: 380,
-              }}>
-                {searchResult}
-              </div>
-            )}
-          </div>
-        )}
+          )}
+        </div>
 
         {/* ── Map area ── */}
         <div style={{ position: "relative", flex: 1, overflow: "hidden" }}>
           <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
 
           {/* Left panel */}
-          {!isPreview && <div style={{
+          <div style={{
             position: "absolute", top: 12, left: 12,
             background: "rgba(10,10,10,0.88)",
             backdropFilter: "blur(12px)",
@@ -337,7 +306,7 @@ function MapContent() {
                 ))}
               </div>
             </div>
-          </div>}
+          </div>
 
           {/* Hub detail panel */}
           {selectedHub && (
