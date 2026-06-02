@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -70,7 +70,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
         <div className="grid md:grid-cols-5 gap-12 pb-12 border-b border-white/10">
 
-          {/* Brand + newsletter — HubSpot form */}
+          {/* Brand + newsletter - HubSpot form */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-5">
               <Image
@@ -140,6 +140,10 @@ export default function Footer() {
                 {b}
               </span>
             ))}
+            <Link href="/privacy-policy"
+              className="text-xs px-3 py-1 rounded-full border border-white/10 text-gray-500 hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
           </div>
           <div className="flex items-center gap-2">
             {socials.map((s) => (
