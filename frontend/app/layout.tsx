@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -70,7 +70,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
-        {/* Google Ads Conversion Event — fires on form submit */}
+        {/* Google Ads Conversion Event - fires on form submit */}
         <script
           dangerouslySetInnerHTML={{
             __html: `function gtagSendEvent(url){var callback=function(){if(typeof url==='string'){window.location=url;}};gtag('event','ads_conversion_Submit_lead_form_1',{'event_callback':callback,'event_timeout':2000});return false;}`,

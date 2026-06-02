@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -254,7 +254,7 @@ export default function BlogPage() {
                 style={{ background: "#141414", border: "1px solid rgba(255,255,255,0.06)" }}>
                 <p className="text-3xl mb-4">📭</p>
                 <p className="font-serif text-xl font-bold text-white mb-2">No posts yet in this category.</p>
-                <p className="text-sm" style={{ color: "#6B7280" }}>Check back soon — more content is on the way.</p>
+                <p className="text-sm" style={{ color: "#6B7280" }}>Check back soon - more content is on the way.</p>
               </div>
             ) : null}
 

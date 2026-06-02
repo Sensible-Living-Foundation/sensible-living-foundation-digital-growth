@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
@@ -15,7 +15,7 @@ const HUBS = [
 ];
 
 const PHASE_COLORS: Record<number, string> = { 1: "#52B788", 2: "#FFCA0A", 3: "#E07B39" };
-const PHASE_LABELS: Record<number, string> = { 1: "Phase 1 — 2026", 2: "Phase 2 — 2027", 3: "Phase 3 — 2028" };
+const PHASE_LABELS: Record<number, string> = { 1: "Phase 1 - 2026", 2: "Phase 2 - 2027", 3: "Phase 3 - 2028" };
 
 const FOOD_DESERT_ZONES = {
   type: "FeatureCollection" as const,
@@ -119,7 +119,7 @@ export default function SenseGardensMap() {
     filtered.forEach(hub => {
       const color = PHASE_COLORS[hub.phase];
 
-      // Clean circular pin with S logo — no label attached
+      // Clean circular pin with S logo - no label attached
       const el = document.createElement("div");
       el.style.cssText = `
         width: 38px;
@@ -188,7 +188,7 @@ export default function SenseGardensMap() {
       const matchedHub = HUBS.find(h => h.zip === zip);
       const matchedZone = FOOD_DESERT_ZONES.features.find(f => f.properties.zip === zip);
       if (matchedHub) {
-        setSearchResult(`${zip} is a Sense Gardens target — ${matchedHub.neighborhood}. Score: ${matchedHub.score}/100.`);
+        setSearchResult(`${zip} is a Sense Gardens target - ${matchedHub.neighborhood}. Score: ${matchedHub.score}/100.`);
         setSelectedHub(matchedHub);
       } else if (matchedZone) {
         setSearchResult(`${zip} is a ${matchedZone.properties.severity} food access risk area.`);
@@ -212,7 +212,7 @@ export default function SenseGardensMap() {
       */}
       <div style={{ paddingTop: "72px", height: "100vh", display: "flex", flexDirection: "column", background: "#0A0A0A" }}>
 
-        {/* ── Controls bar — sits below site header ── */}
+        {/* ── Controls bar - sits below site header ── */}
         <div style={{
           background: "rgba(10,10,10,0.95)",
           borderBottom: "1px solid rgba(255,255,255,0.08)",
@@ -226,7 +226,7 @@ export default function SenseGardensMap() {
         }}>
           <div style={{ flex: "0 0 auto" }}>
             <p style={{ color: "#52B788", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 1 }}>Sensible Living Foundation</p>
-            <p style={{ color: "white", fontSize: 15, fontWeight: 700, fontFamily: "Georgia, serif", margin: 0 }}>Sense Gardens — Food Desert Map</p>
+            <p style={{ color: "white", fontSize: 15, fontWeight: 700, fontFamily: "Georgia, serif", margin: 0 }}>Sense Gardens - Food Desert Map</p>
           </div>
 
           <form onSubmit={handleZipSearch} style={{ display: "flex", gap: 8, flex: "1 1 240px", maxWidth: 340 }}>
@@ -277,9 +277,9 @@ export default function SenseGardensMap() {
             <div style={{ display: "flex", flexDirection: "column", gap: 5, marginBottom: 14 }}>
               {[
                 { label: "All Hubs", value: "all" as const },
-                { label: "Phase 1 — 2026", value: 1 },
-                { label: "Phase 2 — 2027", value: 2 },
-                { label: "Phase 3 — 2028", value: 3 },
+                { label: "Phase 1 - 2026", value: 1 },
+                { label: "Phase 2 - 2027", value: 2 },
+                { label: "Phase 3 - 2028", value: 3 },
               ].map(opt => (
                 <button key={String(opt.value)} onClick={() => setActivePhase(opt.value as any)}
                   style={{
