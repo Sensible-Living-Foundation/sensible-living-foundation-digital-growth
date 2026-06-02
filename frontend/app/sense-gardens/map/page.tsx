@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Script from "next/script";
 
 const HUBS = [
@@ -15,12 +15,11 @@ const HUBS = [
 ];
 
 const PHASE_COLORS: Record<number, string> = { 1: "#52B788", 2: "#FFCA0A", 3: "#E07B39" };
-const PHASE_LABELS: Record<number, string> = { 1: "Phase 1 — 2026", 2: "Phase 2 — 2027", 3: "Phase 3 — 2028" };
+const PHASE_LABELS: Record<number, string> = { 1: "Phase 1 - 2026", 2: "Phase 2 - 2027", 3: "Phase 3 - 2028" };
 
 const FOOD_DESERT_ZONES = {
   type: "FeatureCollection" as const,
   features: [
-    // Phoenix / West Valley
     { type: "Feature" as const, properties: { name: "South Phoenix", zip: "85009", severity: "critical" }, geometry: { type: "Polygon" as const, coordinates: [[[-112.128, 33.428], [-112.070, 33.428], [-112.070, 33.390], [-112.128, 33.390], [-112.128, 33.428]]] } },
     { type: "Feature" as const, properties: { name: "Maryvale", zip: "85031", severity: "critical" }, geometry: { type: "Polygon" as const, coordinates: [[[-112.175, 33.500], [-112.130, 33.500], [-112.130, 33.458], [-112.175, 33.458], [-112.175, 33.500]]] } },
     { type: "Feature" as const, properties: { name: "West Van Buren", zip: "85035", severity: "critical" }, geometry: { type: "Polygon" as const, coordinates: [[[-112.160, 33.488], [-112.120, 33.488], [-112.120, 33.456], [-112.160, 33.456], [-112.160, 33.488]]] } },
@@ -29,7 +28,6 @@ const FOOD_DESERT_ZONES = {
     { type: "Feature" as const, properties: { name: "Alhambra", zip: "85017", severity: "high" }, geometry: { type: "Polygon" as const, coordinates: [[[-112.120, 33.495], [-112.080, 33.495], [-112.080, 33.462], [-112.120, 33.462], [-112.120, 33.495]]] } },
     { type: "Feature" as const, properties: { name: "Glendale Corridor", zip: "85301", severity: "moderate" }, geometry: { type: "Polygon" as const, coordinates: [[[-112.210, 33.555], [-112.155, 33.555], [-112.155, 33.518], [-112.210, 33.518], [-112.210, 33.555]]] } },
     { type: "Feature" as const, properties: { name: "South Mountain", zip: "85041", severity: "moderate" }, geometry: { type: "Polygon" as const, coordinates: [[[-112.085, 33.405], [-112.030, 33.405], [-112.030, 33.365], [-112.085, 33.365], [-112.085, 33.405]]] } },
-    // East Valley
     { type: "Feature" as const, properties: { name: "West Mesa", zip: "85201", severity: "critical" }, geometry: { type: "Polygon" as const, coordinates: [[[-111.870, 33.435], [-111.820, 33.435], [-111.820, 33.400], [-111.870, 33.400], [-111.870, 33.435]]] } },
     { type: "Feature" as const, properties: { name: "Central Mesa", zip: "85204", severity: "high" }, geometry: { type: "Polygon" as const, coordinates: [[[-111.840, 33.420], [-111.790, 33.420], [-111.790, 33.390], [-111.840, 33.390], [-111.840, 33.420]]] } },
     { type: "Feature" as const, properties: { name: "East Mesa / Apache Junction", zip: "85208", severity: "high" }, geometry: { type: "Polygon" as const, coordinates: [[[-111.720, 33.420], [-111.660, 33.420], [-111.660, 33.375], [-111.720, 33.375], [-111.720, 33.420]]] } },
@@ -37,10 +35,8 @@ const FOOD_DESERT_ZONES = {
     { type: "Feature" as const, properties: { name: "South Chandler", zip: "85225", severity: "moderate" }, geometry: { type: "Polygon" as const, coordinates: [[[-111.870, 33.310], [-111.820, 33.310], [-111.820, 33.270], [-111.870, 33.270], [-111.870, 33.310]]] } },
     { type: "Feature" as const, properties: { name: "SW Gilbert", zip: "85233", severity: "moderate" }, geometry: { type: "Polygon" as const, coordinates: [[[-111.810, 33.360], [-111.760, 33.360], [-111.760, 33.320], [-111.810, 33.320], [-111.810, 33.360]]] } },
     { type: "Feature" as const, properties: { name: "Apache Junction", zip: "85120", severity: "high" }, geometry: { type: "Polygon" as const, coordinates: [[[-111.590, 33.430], [-111.530, 33.430], [-111.530, 33.385], [-111.590, 33.385], [-111.590, 33.430]]] } },
-    // North Valley
     { type: "Feature" as const, properties: { name: "Peoria South", zip: "85345", severity: "moderate" }, geometry: { type: "Polygon" as const, coordinates: [[[-112.240, 33.590], [-112.180, 33.590], [-112.180, 33.545], [-112.240, 33.545], [-112.240, 33.590]]] } },
     { type: "Feature" as const, properties: { name: "El Mirage / Surprise", zip: "85335", severity: "high" }, geometry: { type: "Polygon" as const, coordinates: [[[-112.340, 33.620], [-112.250, 33.620], [-112.250, 33.570], [-112.340, 33.570], [-112.340, 33.620]]] } },
-    // Statewide AZ
     { type: "Feature" as const, properties: { name: "Tucson South", zip: "85706", severity: "critical" }, geometry: { type: "Polygon" as const, coordinates: [[[-110.990, 32.200], [-110.920, 32.200], [-110.920, 32.150], [-110.990, 32.150], [-110.990, 32.200]]] } },
     { type: "Feature" as const, properties: { name: "Tucson West", zip: "85745", severity: "high" }, geometry: { type: "Polygon" as const, coordinates: [[[-111.060, 32.245], [-110.990, 32.245], [-110.990, 32.195], [-111.060, 32.195], [-111.060, 32.245]]] } },
     { type: "Feature" as const, properties: { name: "Yuma", zip: "85364", severity: "high" }, geometry: { type: "Polygon" as const, coordinates: [[[-114.660, 32.730], [-114.590, 32.730], [-114.590, 32.680], [-114.660, 32.680], [-114.660, 32.730]]] } },
@@ -51,7 +47,7 @@ const FOOD_DESERT_ZONES = {
   ]
 };
 
-export default function SenseGardensMap() {
+function MapContent() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
@@ -118,8 +114,6 @@ export default function SenseGardensMap() {
 
     filtered.forEach(hub => {
       const color = PHASE_COLORS[hub.phase];
-
-      // Clean circular pin with S logo — no label attached
       const el = document.createElement("div");
       el.style.cssText = `
         width: 38px;
@@ -188,7 +182,7 @@ export default function SenseGardensMap() {
       const matchedHub = HUBS.find(h => h.zip === zip);
       const matchedZone = FOOD_DESERT_ZONES.features.find(f => f.properties.zip === zip);
       if (matchedHub) {
-        setSearchResult(`${zip} is a Sense Gardens target — ${matchedHub.neighborhood}. Score: ${matchedHub.score}/100.`);
+        setSearchResult(`${zip} is a Sense Gardens target - ${matchedHub.neighborhood}. Score: ${matchedHub.score}/100.`);
         setSelectedHub(matchedHub);
       } else if (matchedZone) {
         setSearchResult(`${zip} is a ${matchedZone.properties.severity} food access risk area.`);
@@ -205,14 +199,9 @@ export default function SenseGardensMap() {
       {/* eslint-disable-next-line @next/next/no-css-tags */}
       <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
 
-      {/*
-        The site header is fixed at z-50 and ~72px tall.
-        We use padding-top on the outer wrapper to push content below it.
-        The map itself fills the remaining viewport height.
-      */}
       <div style={{ paddingTop: "72px", height: "100vh", display: "flex", flexDirection: "column", background: "#0A0A0A" }}>
 
-        {/* ── Controls bar — sits below site header ── */}
+        {/* ── Controls bar ── */}
         <div style={{
           background: "rgba(10,10,10,0.95)",
           borderBottom: "1px solid rgba(255,255,255,0.08)",
@@ -226,7 +215,7 @@ export default function SenseGardensMap() {
         }}>
           <div style={{ flex: "0 0 auto" }}>
             <p style={{ color: "#52B788", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 1 }}>Sensible Living Foundation</p>
-            <p style={{ color: "white", fontSize: 15, fontWeight: 700, fontFamily: "Georgia, serif", margin: 0 }}>Sense Gardens — Food Desert Map</p>
+            <p style={{ color: "white", fontSize: 15, fontWeight: 700, fontFamily: "Georgia, serif", margin: 0 }}>Sense Gardens - Food Desert Map</p>
           </div>
 
           <form onSubmit={handleZipSearch} style={{ display: "flex", gap: 8, flex: "1 1 240px", maxWidth: 340 }}>
@@ -277,9 +266,9 @@ export default function SenseGardensMap() {
             <div style={{ display: "flex", flexDirection: "column", gap: 5, marginBottom: 14 }}>
               {[
                 { label: "All Hubs", value: "all" as const },
-                { label: "Phase 1 — 2026", value: 1 },
-                { label: "Phase 2 — 2027", value: 2 },
-                { label: "Phase 3 — 2028", value: 3 },
+                { label: "Phase 1 - 2026", value: 1 },
+                { label: "Phase 2 - 2027", value: 2 },
+                { label: "Phase 3 - 2028", value: 3 },
               ].map(opt => (
                 <button key={String(opt.value)} onClick={() => setActivePhase(opt.value as any)}
                   style={{
@@ -391,5 +380,17 @@ export default function SenseGardensMap() {
         </div>
       </div>
     </>
+  );
+}
+
+export default function SenseGardensMap() {
+  return (
+    <Suspense fallback={
+      <div style={{ background: "#0A0A0A", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ color: "#52B788", fontSize: 14, fontWeight: 600, letterSpacing: "0.08em" }}>Loading map...</div>
+      </div>
+    }>
+      <MapContent />
+    </Suspense>
   );
 }
