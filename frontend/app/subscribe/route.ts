@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, firstName, lastName } = await request.json();
+    const { email, firstName, lastName, phone } = await request.json();
 
     if (!email) {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
@@ -26,6 +26,7 @@ export async function POST(request: NextRequest) {
           email,
           firstname: firstName ?? "",
           lastname: lastName ?? "",
+          ...(phone ? { phone } : {}),
           lifecyclestage: "subscriber",
           hs_lead_status: "NEW",
         },

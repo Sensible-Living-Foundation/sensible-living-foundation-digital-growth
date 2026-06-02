@@ -48,9 +48,9 @@ export default function DonationForm() {
       <input type="text" placeholder="Full Name" className="input mb-3" />
       <input type="email" placeholder="Email Address" className="input mb-4" />
 
-      <button className="btn-yellow w-full justify-center !rounded">
+      <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="btn-yellow w-full justify-center !rounded">
         Donate {selected !== "Other" ? selected : ""} {freq === "Give Monthly" ? "/ Month" : ""} →
-      </button>
+      </a>
       <p className="text-center text-xs text-gray-400 mt-3">
         Secure · Tax-deductible · 501(c)(3) · EIN: 99-2323968
       </p>

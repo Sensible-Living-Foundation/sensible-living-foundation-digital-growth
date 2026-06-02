@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import NewsletterForm from "../components/NewsletterForm";
 
 export default function SenseGardens() {
   return (
@@ -21,7 +22,7 @@ export default function SenseGardens() {
               Sense Gardens is building a modern solution: space-efficient, water-smart vertical and hydroponic garden systems designed for urban communities - starting with pilot programs right here in Phoenix.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a className="px-8 py-4 rounded font-bold text-sm uppercase tracking-widest transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }} href="/get-involved#donate">Support the Mission</a>
+              <a className="px-8 py-4 rounded font-bold text-sm uppercase tracking-widest transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }} href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer">Support the Mission</a>
               <a className="px-8 py-4 rounded border-2 border-gray-500 text-white font-bold text-sm uppercase tracking-widest hover:border-white transition-colors" href="/sense-gardens/map">View the Map</a>
             </div>
           </div>
@@ -38,7 +39,7 @@ export default function SenseGardens() {
               <button className="py-3 border-2 rounded font-bold text-sm transition-colors" style={{ borderColor: "#e5e7eb", color: "#374151" }}>Give Monthly</button>
             </div>
             <input type="email" placeholder="Email address" className="w-full px-4 py-3 border border-gray-200 rounded text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-            <button type="submit" className="w-full py-4 font-bold text-sm uppercase tracking-widest rounded transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }}>Donate Now</button>
+            <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="w-full py-4 font-bold text-sm uppercase tracking-widest rounded transition-colors hover:opacity-90 flex items-center justify-center" style={{ background: "#FFCA0A", color: "#222520" }}>Donate Now</a>
             <p className="text-xs text-gray-400 text-center mt-4">Secure donation via Givebutter · Tax-deductible · EIN: 99-2323968</p>
           </div>
         </div>
@@ -139,9 +140,9 @@ export default function SenseGardens() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { img: "/images/gardens/vertical.jpeg", alt: "Vertical Garden Systems", title: "Vertical Garden Systems", desc: "Growing systems that stack plants vertically, bringing fresh food to schools, community centers, and neighborhood sites with no traditional garden space." },
-              { img: "/images/gardens/Hydrophonic.jpeg", alt: "Hydroponic Growing", title: "Hydroponic Growing", desc: "A soil-free growing method that uses significantly less water than traditional soil gardening - making it practical and sustainable in Phoenix's desert climate." },
-              { img: "/images/gardens/modular.jpeg", alt: "Modular Pilot Systems", title: "Modular Pilot Systems", desc: "Each pilot system is designed to start small and grow alongside our community partnerships - practical and accessible from day one." },
+              { img: "/images/gardens/vertical.jpeg", alt: "Vertical tower garden system growing fresh produce for urban communities in Phoenix", title: "Vertical Garden Systems", desc: "Growing systems that stack plants vertically, bringing fresh food to schools, community centers, and neighborhood sites with no traditional garden space." },
+              { img: "/images/gardens/Hydrophonic.jpeg", alt: "Hydroponic growing system providing soil-free fresh food access in Phoenix food deserts", title: "Hydroponic Growing", desc: "A soil-free growing method that uses significantly less water than traditional soil gardening — making it practical and sustainable in Phoenix's desert climate." },
+              { img: "/images/gardens/modular.jpeg", alt: "Modular hydroponic garden system built for schools and community centers in Phoenix", title: "Modular Pilot Systems", desc: "Each pilot system is designed to start small and grow alongside our community partnerships — practical and accessible from day one." },
             ].map((card) => (
               <div key={card.title} className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="relative h-48 w-full">
@@ -317,7 +318,7 @@ export default function SenseGardens() {
               <div key={item.amt} className="border border-gray-100 rounded-xl p-8 hover:shadow-md transition-shadow group cursor-pointer hover:border-yellow-300">
                 <p className="font-serif text-4xl font-extrabold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors">{item.amt}</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">{item.desc}</p>
-                <a className="inline-block px-6 py-3 rounded text-sm font-bold uppercase tracking-wide transition-colors" style={{ background: "#FFCA0A", color: "#222520" }} href="/get-involved#donate">Give {item.amt}</a>
+                <a className="inline-block px-6 py-3 rounded text-sm font-bold uppercase tracking-wide transition-colors" style={{ background: "#FFCA0A", color: "#222520" }} href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer">Give {item.amt}</a>
               </div>
             ))}
           </div>
@@ -421,12 +422,8 @@ export default function SenseGardens() {
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl font-extrabold text-gray-900 mb-3">Add Impact to Your Inbox</h2>
-          <p className="text-gray-500 mb-8">Garden updates, pilot program milestones, and ways to help - delivered to your inbox.</p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <input type="text" placeholder="Your name" className="px-5 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 flex-1" />
-            <input type="email" placeholder="Email address" className="px-5 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 flex-1" />
-            <button className="px-7 py-3 rounded font-bold text-sm uppercase tracking-wide transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }}>Subscribe</button>
-          </div>
+          <p className="text-gray-500 mb-8">Garden updates, pilot program milestones, and ways to help — delivered to your inbox.</p>
+          <NewsletterForm />
         </div>
       </section>
     </div>
