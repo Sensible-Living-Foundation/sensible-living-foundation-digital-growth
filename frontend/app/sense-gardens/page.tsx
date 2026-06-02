@@ -1,7 +1,8 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
+import NewsletterForm from "../components/NewsletterForm";
 
 export default function SenseGardens() {
   return (
@@ -15,13 +16,13 @@ export default function SenseGardens() {
               Fresh food, reimagined for the communities that need it most.
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed mb-4 max-w-lg">
-              <strong className="text-white">23.5 million Americans</strong> live in food deserts — communities with no real access to affordable, healthy food. In Phoenix alone, thousands of families face this reality every day.
+              <strong className="text-white">23.5 million Americans</strong> live in food deserts - communities with no real access to affordable, healthy food. In Phoenix alone, thousands of families face this reality every day.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-lg">
-              Sense Gardens is building a modern solution: space-efficient, water-smart vertical and hydroponic garden systems designed for urban communities — starting with pilot programs right here in Phoenix.
+              Sense Gardens is building a modern solution: space-efficient, water-smart vertical and hydroponic garden systems designed for urban communities - starting with pilot programs right here in Phoenix.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a className="px-8 py-4 rounded font-bold text-sm uppercase tracking-widest transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }} href="/get-involved#donate">Support the Mission</a>
+              <a className="px-8 py-4 rounded font-bold text-sm uppercase tracking-widest transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }} href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer">Support the Mission</a>
               <a className="px-8 py-4 rounded border-2 border-gray-500 text-white font-bold text-sm uppercase tracking-widest hover:border-white transition-colors" href="/sense-gardens/map">View the Map</a>
             </div>
           </div>
@@ -38,7 +39,7 @@ export default function SenseGardens() {
               <button className="py-3 border-2 rounded font-bold text-sm transition-colors" style={{ borderColor: "#e5e7eb", color: "#374151" }}>Give Monthly</button>
             </div>
             <input type="email" placeholder="Email address" className="w-full px-4 py-3 border border-gray-200 rounded text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-            <button type="submit" className="w-full py-4 font-bold text-sm uppercase tracking-widest rounded transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }}>Donate Now</button>
+            <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="w-full py-4 font-bold text-sm uppercase tracking-widest rounded transition-colors hover:opacity-90 flex items-center justify-center" style={{ background: "#FFCA0A", color: "#222520" }}>Donate Now</a>
             <p className="text-xs text-gray-400 text-center mt-4">Secure donation via Givebutter · Tax-deductible · EIN: 99-2323968</p>
           </div>
         </div>
@@ -90,7 +91,7 @@ export default function SenseGardens() {
               <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#FFCA0A" }}>Our Framework</span>
             </div>
             <h2 className="font-serif text-5xl font-extrabold text-white mb-4">The <span style={{ color: "#FFCA0A" }}>3E</span> Model</h2>
-            <p className="text-gray-400 text-lg max-w-xl mx-auto">Not temporary relief. Long-term transformation — through three connected principles.</p>
+            <p className="text-gray-400 text-lg max-w-xl mx-auto">Not temporary relief. Long-term transformation - through three connected principles.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-14">
             {[
@@ -107,8 +108,8 @@ export default function SenseGardens() {
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-white mb-3">{card.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  {card.title === "Educate" && "Practical nutrition and garden knowledge that participants can use immediately — and build on for life."}
-                  {card.title === "Empower" && "Access, agency, and community — giving people the support systems to take real action."}
+                  {card.title === "Educate" && "Practical nutrition and garden knowledge that participants can use immediately - and build on for life."}
+                  {card.title === "Empower" && "Access, agency, and community - giving people the support systems to take real action."}
                   {card.title === "Elevate" && "Improved health, stronger communities, and the capacity to pass opportunity to the next generation."}
                 </p>
                 <ul className="space-y-2">
@@ -139,9 +140,9 @@ export default function SenseGardens() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { img: "/images/gardens/vertical.jpeg", alt: "Vertical Garden Systems", title: "Vertical Garden Systems", desc: "Growing systems that stack plants vertically, bringing fresh food to schools, community centers, and neighborhood sites with no traditional garden space." },
-              { img: "/images/gardens/Hydrophonic.jpeg", alt: "Hydroponic Growing", title: "Hydroponic Growing", desc: "A soil-free growing method that uses significantly less water than traditional soil gardening — making it practical and sustainable in Phoenix's desert climate." },
-              { img: "/images/gardens/modular.jpeg", alt: "Modular Pilot Systems", title: "Modular Pilot Systems", desc: "Each pilot system is designed to start small and grow alongside our community partnerships — practical and accessible from day one." },
+              { img: "/images/gardens/vertical.jpeg", alt: "Vertical tower garden system growing fresh produce for urban communities in Phoenix", title: "Vertical Garden Systems", desc: "Growing systems that stack plants vertically, bringing fresh food to schools, community centers, and neighborhood sites with no traditional garden space." },
+              { img: "/images/gardens/Hydrophonic.jpeg", alt: "Hydroponic growing system providing soil-free fresh food access in Phoenix food deserts", title: "Hydroponic Growing", desc: "A soil-free growing method that uses significantly less water than traditional soil gardening — making it practical and sustainable in Phoenix's desert climate." },
+              { img: "/images/gardens/modular.jpeg", alt: "Modular hydroponic garden system built for schools and community centers in Phoenix", title: "Modular Pilot Systems", desc: "Each pilot system is designed to start small and grow alongside our community partnerships — practical and accessible from day one." },
             ].map((card) => (
               <div key={card.title} className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="relative h-48 w-full">
@@ -167,13 +168,13 @@ export default function SenseGardens() {
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Why Vertical?</span>
               <h2 className="font-serif text-4xl font-extrabold text-gray-900 mt-3 mb-6">Why vertical and hydroponic gardens?</h2>
-              <p className="text-gray-500 leading-relaxed mb-8">While some crops are still best grown in soil, vertical and hydroponic systems offer clear advantages for our model and the communities we serve — especially in Phoenix, where space is limited and water is precious.</p>
+              <p className="text-gray-500 leading-relaxed mb-8">While some crops are still best grown in soil, vertical and hydroponic systems offer clear advantages for our model and the communities we serve - especially in Phoenix, where space is limited and water is precious.</p>
               <div className="space-y-5">
                 {[
-                  { icon: "💧", title: "Reduced water use", desc: "Hydroponic systems use a fraction of the water traditional gardens require — a critical advantage in Phoenix and other desert communities." },
-                  { icon: "📐", title: "Better use of limited space", desc: "Vertical systems make fresh food possible in small urban footprints — schools, community centers, and neighborhood sites with no traditional garden space." },
-                  { icon: "✅", title: "Controlled, clean environment", desc: "Enclosed systems reduce exposure to pests, weather, and contamination — resulting in consistent, reliable growing year-round." },
-                  { icon: "🌵", title: "Built for urban and desert settings", desc: "This model is designed for environments like Phoenix — where space is limited and water is precious, but the need for fresh food is real." },
+                  { icon: "💧", title: "Reduced water use", desc: "Hydroponic systems use a fraction of the water traditional gardens require - a critical advantage in Phoenix and other desert communities." },
+                  { icon: "📐", title: "Better use of limited space", desc: "Vertical systems make fresh food possible in small urban footprints - schools, community centers, and neighborhood sites with no traditional garden space." },
+                  { icon: "✅", title: "Controlled, clean environment", desc: "Enclosed systems reduce exposure to pests, weather, and contamination - resulting in consistent, reliable growing year-round." },
+                  { icon: "🌵", title: "Built for urban and desert settings", desc: "This model is designed for environments like Phoenix - where space is limited and water is precious, but the need for fresh food is real." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
                     <span className="text-2xl shrink-0">{item.icon}</span>
@@ -233,16 +234,16 @@ export default function SenseGardens() {
           <div className="text-center mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-gray-400">More Than Food</span>
             <h2 className="font-serif text-4xl font-extrabold text-gray-900 mt-3 mb-4">Gardens are good for the whole person.</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg">Sense Gardens is not just about growing food. It is about growing healthier, more connected, more empowered communities — one family at a time.</p>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg">Sense Gardens is not just about growing food. It is about growing healthier, more connected, more empowered communities - one family at a time.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
               { icon: "🥗", title: "Healthier Eating", desc: "Access to fresh produce grown close to home makes it easier for families to eat more vegetables, reduce processed food dependence, and build healthier daily habits." },
-              { icon: "💪", title: "Physical Health", desc: "A diet rich in fresh produce reduces the risk of diabetes, heart disease, and obesity — conditions that disproportionately affect communities in food deserts." },
-              { icon: "🧠", title: "Emotional & Mental Well-Being", desc: "Growing food, learning together, and contributing to a shared community resource builds pride, purpose, and connection — all of which support mental health." },
+              { icon: "💪", title: "Physical Health", desc: "A diet rich in fresh produce reduces the risk of diabetes, heart disease, and obesity - conditions that disproportionately affect communities in food deserts." },
+              { icon: "🧠", title: "Emotional & Mental Well-Being", desc: "Growing food, learning together, and contributing to a shared community resource builds pride, purpose, and connection - all of which support mental health." },
               { icon: "📚", title: "Educational Engagement", desc: "Garden systems serve as hands-on STEM learning environments where students connect biology, nutrition, and sustainability to real-world experience." },
-              { icon: "🤝", title: "Community Connection", desc: "Shared garden spaces become gathering points — bringing neighbors, schools, and organizations together around a common goal of health and nourishment." },
-              { icon: "🌍", title: "Environmental Awareness", desc: "Participants learn sustainable growing practices, water conservation, and the environmental impact of food systems — building awareness that lasts beyond the garden." },
+              { icon: "🤝", title: "Community Connection", desc: "Shared garden spaces become gathering points - bringing neighbors, schools, and organizations together around a common goal of health and nourishment." },
+              { icon: "🌍", title: "Environmental Awareness", desc: "Participants learn sustainable growing practices, water conservation, and the environmental impact of food systems - building awareness that lasts beyond the garden." },
             ].map((item) => (
               <div key={item.title} className="p-8 rounded-2xl border border-gray-100 hover:shadow-md hover:border-green-200 transition-all">
                 <span className="text-4xl mb-5 block">{item.icon}</span>
@@ -260,14 +261,14 @@ export default function SenseGardens() {
           <div className="mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-gray-400">From Garden to Table</span>
             <h2 className="font-serif text-4xl font-extrabold text-gray-900 mt-3 mb-4">Healthy meals families will actually make.</h2>
-            <p className="text-gray-500 leading-relaxed max-w-2xl text-lg">Fresh produce from the garden is just the starting point. These ideas are designed to be practical, budget-friendly, and easy to prepare — real meals for real life.</p>
+            <p className="text-gray-500 leading-relaxed max-w-2xl text-lg">Fresh produce from the garden is just the starting point. These ideas are designed to be practical, budget-friendly, and easy to prepare - real meals for real life.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
               { icon: "🥬", title: "Fresh Meal-Prep Salads & Bowls", items: ["Mixed greens with cucumber, tomato, and a simple lemon-olive oil dressing", "Grain bowl with brown rice, roasted peppers, and fresh herbs", "Chopped kale salad with shredded carrots, sunflower seeds, and apple cider vinaigrette"], link: "/recipes#salads" },
-              { icon: "🍲", title: "Healthy Plant-Based Meals", items: ["Stir-fried greens and peppers over brown rice — ready in under 20 minutes", "Lentil and tomato soup with garden herbs — filling, affordable, and freezer-friendly", "Stuffed bell peppers with seasoned beans, rice, and fresh herbs"], link: "/recipes#plant-based" },
-              { icon: "🥕", title: "Nutritious Snacks", items: ["Sliced cucumber and cherry tomatoes with hummus — no cooking required", "Celery and carrot sticks with peanut butter — a budget-friendly staple", "Fresh herb and tomato bruschetta on whole grain bread"], link: "/recipes#snacks" },
-              { icon: "🧃", title: "Smoothies & Juices", items: ["Spinach, banana, and frozen berry smoothie — nutritious and under $1 per serving", "Cucumber and fresh mint cooler — refreshing, hydrating, zero added sugar", "Kale, apple, and ginger green smoothie — simple ingredients, big nutrition"], link: "/recipes#smoothies" },
+              { icon: "🍲", title: "Healthy Plant-Based Meals", items: ["Stir-fried greens and peppers over brown rice - ready in under 20 minutes", "Lentil and tomato soup with garden herbs - filling, affordable, and freezer-friendly", "Stuffed bell peppers with seasoned beans, rice, and fresh herbs"], link: "/recipes#plant-based" },
+              { icon: "🥕", title: "Nutritious Snacks", items: ["Sliced cucumber and cherry tomatoes with hummus - no cooking required", "Celery and carrot sticks with peanut butter - a budget-friendly staple", "Fresh herb and tomato bruschetta on whole grain bread"], link: "/recipes#snacks" },
+              { icon: "🧃", title: "Smoothies & Juices", items: ["Spinach, banana, and frozen berry smoothie - nutritious and under $1 per serving", "Cucumber and fresh mint cooler - refreshing, hydrating, zero added sugar", "Kale, apple, and ginger green smoothie - simple ingredients, big nutrition"], link: "/recipes#smoothies" },
             ].map((card) => (
               <div key={card.title} className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3 mb-5">
@@ -317,7 +318,7 @@ export default function SenseGardens() {
               <div key={item.amt} className="border border-gray-100 rounded-xl p-8 hover:shadow-md transition-shadow group cursor-pointer hover:border-yellow-300">
                 <p className="font-serif text-4xl font-extrabold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors">{item.amt}</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">{item.desc}</p>
-                <a className="inline-block px-6 py-3 rounded text-sm font-bold uppercase tracking-wide transition-colors" style={{ background: "#FFCA0A", color: "#222520" }} href="/get-involved#donate">Give {item.amt}</a>
+                <a className="inline-block px-6 py-3 rounded text-sm font-bold uppercase tracking-wide transition-colors" style={{ background: "#FFCA0A", color: "#222520" }} href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer">Give {item.amt}</a>
               </div>
             ))}
           </div>
@@ -331,7 +332,7 @@ export default function SenseGardens() {
             <span className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">Garden Map</span>
             <h2 className="font-serif text-4xl font-extrabold text-white mb-6">See where we are planting roots.</h2>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Our interactive map shows food desert data across Phoenix and Arizona — identifying the neighborhoods where access to fresh food is most limited and where our Sense Gardens hubs will make the greatest impact. View target locations, explore food desert zones by severity, and search any zip code to check food access in your community.
+              Our interactive map shows food desert data across Phoenix and Arizona - identifying the neighborhoods where access to fresh food is most limited and where our Sense Gardens hubs will make the greatest impact. View target locations, explore food desert zones by severity, and search any zip code to check food access in your community.
             </p>
             <a className="inline-block px-8 py-4 rounded font-bold text-sm uppercase tracking-widest transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }} href="/sense-gardens/map">
               Explore the Map
@@ -347,6 +348,51 @@ export default function SenseGardens() {
                 className="w-full h-full border-0"
                 scrolling="no"
               />
+
+              {/* Food desert zone previews */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute opacity-30 group-hover:opacity-50 transition-opacity duration-500" style={{ background: "#E24B4A", width: 140, height: 80, top: "25%", left: "18%", borderRadius: 6 }} />
+                <div className="absolute opacity-25 group-hover:opacity-45 transition-opacity duration-500" style={{ background: "#E07B39", width: 110, height: 70, top: "35%", left: "38%", borderRadius: 6 }} />
+                <div className="absolute opacity-20 group-hover:opacity-40 transition-opacity duration-500" style={{ background: "#BA7517", width: 130, height: 90, top: "45%", left: "28%", borderRadius: 6 }} />
+                <div className="absolute opacity-20 group-hover:opacity-35 transition-opacity duration-500" style={{ background: "#E24B4A", width: 90, height: 60, top: "20%", left: "55%", borderRadius: 6 }} />
+                <div className="absolute opacity-15 group-hover:opacity-30 transition-opacity duration-500" style={{ background: "#E07B39", width: 100, height: 65, top: "55%", left: "60%", borderRadius: 6 }} />
+              </div>
+
+              {/* SLF hub pins */}
+              {[
+                { top: "38%", left: "30%", color: "#52B788" },
+                { top: "28%", left: "22%", color: "#52B788" },
+                { top: "32%", left: "42%", color: "#52B788" },
+                { top: "44%", left: "56%", color: "#FFCA0A" },
+                { top: "55%", left: "25%", color: "#FFCA0A" },
+                { top: "20%", left: "58%", color: "#E07B39" },
+              ].map((pin, i) => (
+                <div
+                  key={i}
+                  className="absolute w-6 h-6 rounded-full border-2 border-white flex items-center justify-center font-bold group-hover:scale-110 transition-transform duration-300 z-10"
+                  style={{ background: pin.color, top: pin.top, left: pin.left, color: "#0A2010", fontSize: 10 }}
+                >
+                  S
+                </div>
+              ))}
+
+              {/* Overlay */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-20" style={{ background: "rgba(10,26,16,0.55)" }}>
+                <div
+                  className="px-4 py-1.5 rounded-full text-xs font-bold mb-3 transition-all duration-300"
+                  style={{ background: "rgba(82,183,136,0.2)", border: "1px solid rgba(82,183,136,0.4)", color: "#86EFAC" }}
+                >
+                  Interactive Map - Live Now
+                </div>
+                <p className="text-white font-semibold text-lg mb-1 font-serif text-center px-4">Explore the Food Desert Map</p>
+                <p className="text-gray-400 text-sm mb-5 text-center px-4">Phoenix · Arizona · USDA data · Hub locations</p>
+                <div
+                  className="px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 group-hover:scale-105"
+                  style={{ background: "#FFCA0A", color: "#1A1A1A" }}
+                >
+                  Open Full Map →
+                </div>
+              </div>
             </div>
             <div className="p-4 flex justify-center" style={{ background: "#0A1A10" }}>
               <Link
@@ -384,11 +430,7 @@ export default function SenseGardens() {
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl font-extrabold text-gray-900 mb-3">Add Impact to Your Inbox</h2>
           <p className="text-gray-500 mb-8">Garden updates, pilot program milestones, and ways to help — delivered to your inbox.</p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <input type="text" placeholder="Your name" className="px-5 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 flex-1" />
-            <input type="email" placeholder="Email address" className="px-5 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 flex-1" />
-            <button className="px-7 py-3 rounded font-bold text-sm uppercase tracking-wide transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }}>Subscribe</button>
-          </div>
+          <NewsletterForm />
         </div>
       </section>
     </div>

@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 /**
  * Smoothly scrolls to the #hash element after any page navigation.
- * Placed once in the root layout — handles all anchor links site-wide.
+ * Placed once in the root layout - handles all anchor links site-wide.
  */
 export default function ScrollToHash() {
   const pathname = usePathname();
