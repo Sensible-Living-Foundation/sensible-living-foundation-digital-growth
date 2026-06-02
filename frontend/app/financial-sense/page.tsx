@@ -34,6 +34,7 @@ export default function FinancialSense() {
   }
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* Hero - dark blue, bold mission, red CTA */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden"
