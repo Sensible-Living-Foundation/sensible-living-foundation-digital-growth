@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import NewsletterForm from "../components/NewsletterForm";
 
 export default function SenseGardens() {
   return (
@@ -422,11 +423,7 @@ export default function SenseGardens() {
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl font-extrabold text-gray-900 mb-3">Add Impact to Your Inbox</h2>
           <p className="text-gray-500 mb-8">Garden updates, pilot program milestones, and ways to help — delivered to your inbox.</p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <input type="text" placeholder="Your name" className="px-5 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 flex-1" />
-            <input type="email" placeholder="Email address" className="px-5 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 flex-1" />
-            <button className="px-7 py-3 rounded font-bold text-sm uppercase tracking-wide transition-colors hover:opacity-90" style={{ background: "#FFCA0A", color: "#222520" }}>Subscribe</button>
-          </div>
+          <NewsletterForm />
         </div>
       </section>
     </div>
