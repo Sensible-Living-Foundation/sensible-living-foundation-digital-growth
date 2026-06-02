@@ -340,15 +340,13 @@ export default function SenseGardens() {
           </div>
 
           {/* ── Clickable map preview ── */}
-          <Link href="/sense-gardens/map">
-            <div
-              className="h-80 rounded-2xl overflow-hidden border border-gray-600 cursor-pointer group transition-all duration-300 hover:border-green-400 hover:shadow-2xl relative"
-              style={{ background: "#0A1A10" }}
-            >
-              {/* Dot grid background */}
-              <div
-                className="absolute inset-0 opacity-20"
-                style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #52B788 1px, transparent 0)", backgroundSize: "24px 24px" }}
+          <div className="rounded-2xl overflow-hidden border border-gray-600" style={{ background: "#0A1A10" }}>
+            <div className="relative h-64 pointer-events-none">
+              <iframe
+                src="/sense-gardens/map?preview=true"
+                title="Sense Gardens food desert map preview"
+                className="w-full h-full border-0"
+                scrolling="no"
               />
 
               {/* Food desert zone previews */}
@@ -396,7 +394,16 @@ export default function SenseGardens() {
                 </div>
               </div>
             </div>
-          </Link>
+            <div className="p-4 flex justify-center" style={{ background: "#0A1A10" }}>
+              <Link
+                href="/sense-gardens/map"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:opacity-90"
+                style={{ background: "#FFCA0A", color: "#1A1A1A" }}
+              >
+                Open Full Map →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
