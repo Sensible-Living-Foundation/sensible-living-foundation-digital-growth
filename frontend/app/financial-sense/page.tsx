@@ -32,8 +32,28 @@ export default function FinancialSense() {
     return (e: React.ChangeEvent<HTMLInputElement>) =>
       setFormData(prev => ({ ...prev, [field]: e.target.value }));
   }
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOccupationalProgram",
+    "name": "Financial Sense",
+    "description": "No-cost financial literacy education for individuals and families in Phoenix, covering budgeting, credit, and wealth-building. Launching 2026.",
+    "url": "https://www.sensiblelivingfoundation.org/financial-sense",
+    "provider": {
+      "@type": "Organization",
+      "name": "Sensible Living Foundation",
+      "url": "https://www.sensiblelivingfoundation.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* Hero - dark blue, bold mission, red CTA */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden"
